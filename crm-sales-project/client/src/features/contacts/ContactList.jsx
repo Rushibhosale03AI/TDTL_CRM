@@ -1,20 +1,34 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { Search, Building2, User, Mail, Phone, ChevronRight } from "lucide-react"
+import { Search, Building2, User, Mail, Phone, ChevronRight, UserPlus } from "lucide-react"
 import { Input } from "../../components/ui/Input"
 import { Button } from "../../components/ui/Button"
 import { Badge } from "../../components/ui/Badge"
 import { useStore } from "../../store/state"
+import { useAuth } from "../../hooks/useAuth"
 
 const ContactList = () => {
   const navigate = useNavigate()
-  const { contacts } = useStore()
+  const { contacts, updateContact, mockUsers } = useStore()
+  const { user } = useAuth()
   const [searchQuery, setSearchQuery] = useState("")
+  
+  const salesReps = mockUsers.filter(u => u.role === 'sales')
 
-  const filteredContacts = contacts.filter((contact) =>
+  // Base contacts based on role
+  const baseContacts = user?.role === 'sales'
+    ? contacts.filter(c => c.assignedTo === user.id)
+    : contacts
+
+  const filteredContacts = baseContacts.filter((contact) =>
     contact.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     contact.company.toLowerCase().includes(searchQuery.toLowerCase())
   )
+  
+  const getAssignedRepName = (id) => {
+    const rep = mockUsers.find(u => u.id === id)
+    return rep ? rep.name : "Unassigned"
+  }
 
   return (
     <div className="space-y-6">
@@ -47,10 +61,14 @@ const ContactList = () => {
         {filteredContacts.map((contact) => (
           <div 
             key={contact.id}
-            onClick={() => navigate(`/contacts/${contact.id}`)}
-            className="group cursor-pointer rounded-xl border bg-card p-5 shadow-sm transition-all hover:border-primary/50 hover:shadow-md"
+            className="group relative rounded-xl border bg-card p-5 shadow-sm transition-all hover:border-primary/50 hover:shadow-md"
           >
-            <div className="flex items-start justify-between">
+            <div 
+              className="absolute inset-0 cursor-pointer z-0" 
+              onClick={() => navigate(`/contacts/${contact.id}`)}
+            />
+            
+            <div className="relative z-10 flex items-start justify-between">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
                   {contact.name.charAt(0)}
@@ -68,7 +86,7 @@ const ContactList = () => {
               <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-1" />
             </div>
 
-            <div className="mt-4 grid grid-cols-1 gap-2 text-sm text-muted-foreground">
+            <div className="relative z-10 mt-4 grid grid-cols-1 gap-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="h-3 w-3" />
                 <span className="truncate">{contact.email}</span>
@@ -79,13 +97,35 @@ const ContactList = () => {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center justify-between border-t border-border/50 pt-3">
-              <Badge variant="secondary" className="text-[10px] uppercase font-bold">
-                {contact.industry}
-              </Badge>
-              <span className="text-[10px] text-muted-foreground">
-                Last: {contact.lastContacted}
-              </span>
+            <div className="relative z-10 mt-4 flex items-center justify-between border-t border-border/50 pt-3">
+              <div className="flex items-center gap-2">
+                <Badge variant="secondary" className="text-[10px] uppercase font-bold">
+                  {contact.industry}
+                </Badge>
+              </div>
+              
+              <div className="flex items-center gap-2 group/assign">
+                <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                  <span className="h-2 w-2 rounded-full bg-primary/50"></span>
+                  {getAssignedRepName(contact.assignedTo)}
+                </div>
+                <div className="relative flex items-center justify-center h-6 w-6">
+                  <select 
+                    title="Re-assign Contact"
+                    value={contact.assignedTo || ""}
+                    onChange={(e) => updateContact(contact.id, { assignedTo: Number(e.target.value) })}
+                    className="h-6 w-6 text-transparent bg-transparent focus:text-foreground cursor-pointer absolute opacity-0 z-20"
+                  >
+                    <option value="" disabled>Re-assign...</option>
+                    {salesReps.map(rep => (
+                      <option key={rep.id} value={rep.id}>{rep.name}</option>
+                    ))}
+                  </select>
+                  <Button variant="ghost" size="icon" className="h-6 w-6 text-muted-foreground opacity-0 group-hover/assign:opacity-100 transition-opacity absolute pointer-events-none z-10">
+                    <UserPlus className="h-3 w-3" />
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         ))}

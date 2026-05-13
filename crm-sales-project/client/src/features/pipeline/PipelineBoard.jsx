@@ -9,6 +9,7 @@ import {
 } from "@dnd-kit/core"
 import { arrayMove } from "@dnd-kit/sortable"
 import { useStore } from "../../store/state"
+import { useAuth } from "../../hooks/useAuth"
 import Column from "./Column"
 import DealCard from "./DealCard"
 
@@ -26,7 +27,13 @@ const STAGES = [
 
 const PipelineBoard = () => {
   const { leads, moveLead } = useStore()
+  const { user } = useAuth()
   const [activeLead, setActiveLead] = useState(null)
+  
+  // Filter leads based on role
+  const pipelineLeads = user?.role === 'sales'
+    ? leads.filter(l => l.assignedTo === user.id)
+    : leads
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -38,7 +45,7 @@ const PipelineBoard = () => {
 
   const handleDragStart = (event) => {
     const { active } = event
-    const lead = leads.find((l) => l.id === active.id)
+    const lead = pipelineLeads.find((l) => l.id === active.id)
     setActiveLead(lead)
   }
 
@@ -49,12 +56,12 @@ const PipelineBoard = () => {
     const activeId = active.id
     const overId = over.id
 
-    const activeLead = leads.find((l) => l.id === activeId)
+    const activeLead = pipelineLeads.find((l) => l.id === activeId)
     if (!activeLead) return
 
     // If dropping over a column or another card
     const overStage = STAGES.find(s => s.id === overId)
-    const overLead = leads.find(l => l.id === overId)
+    const overLead = pipelineLeads.find(l => l.id === overId)
     
     const newStatus = overStage ? overStage.id : (overLead ? overLead.status : null)
 
@@ -92,7 +99,7 @@ const PipelineBoard = () => {
                 key={stage.id}
                 id={stage.id}
                 title={stage.title}
-                leads={leads.filter((l) => l.status === stage.id)}
+                leads={pipelineLeads.filter((l) => l.status === stage.id)}
               />
             ))}
           </div>

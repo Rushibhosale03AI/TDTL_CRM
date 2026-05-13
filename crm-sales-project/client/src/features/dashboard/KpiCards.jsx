@@ -6,6 +6,7 @@ import {
   Clock 
 } from "lucide-react"
 import { useStore } from "../../store/state"
+import { useAuth } from "../../hooks/useAuth"
 
 const KpiCard = ({ title, value, subtext, icon: Icon, colorClass }) => (
   <div className="rounded-xl border bg-card p-6 shadow-sm">
@@ -20,13 +21,17 @@ const KpiCard = ({ title, value, subtext, icon: Icon, colorClass }) => (
 
 const KpiCards = () => {
   const { leads } = useStore()
+  const { user } = useAuth()
+  
+  // Filter leads assigned to the current user
+  const myLeads = leads.filter(l => l.assignedTo === user?.id)
 
   // Dynamic calculations
-  const totalLeads = leads.length
-  const wonLeads = leads.filter(l => l.status === "Won")
+  const totalLeads = myLeads.length
+  const wonLeads = myLeads.filter(l => l.status === "Won")
   const convertedCount = wonLeads.length
   const totalRevenue = wonLeads.reduce((sum, l) => sum + Number(l.value || 0), 0)
-  const pendingLeads = leads.filter(l => !["Won", "Lost"].includes(l.status)).length
+  const pendingLeads = myLeads.filter(l => !["Won", "Lost"].includes(l.status)).length
 
   const conversionRate = totalLeads > 0 
     ? ((convertedCount / totalLeads) * 100).toFixed(1) 

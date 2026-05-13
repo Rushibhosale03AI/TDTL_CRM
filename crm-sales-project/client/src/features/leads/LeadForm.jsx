@@ -3,9 +3,11 @@ import { X } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { Input } from "../../components/ui/Input"
 import { useStore } from "../../store/state"
+import { useAuth } from "../../hooks/useAuth"
 
 const LeadForm = ({ isOpen, onClose, editingLead = null }) => {
   const { addLead, updateLead } = useStore()
+  const { user } = useAuth()
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -39,6 +41,7 @@ const LeadForm = ({ isOpen, onClose, editingLead = null }) => {
         ...formData,
         id: Date.now(),
         date: new Date().toISOString().split("T")[0],
+        assignedTo: user?.id,
       })
     }
     onClose()

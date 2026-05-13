@@ -1,9 +1,13 @@
 import React from "react"
 import { Phone, Mail, Calendar, Info, ChevronRight } from "lucide-react"
 import { useStore } from "../../store/state"
+import { useAuth } from "../../hooks/useAuth"
 
 const ActivityFeed = () => {
   const { activities } = useStore()
+  const { user } = useAuth()
+  
+  const myActivities = activities.filter(a => a.assignedTo === user?.id)
 
   const getActivityIcon = (type) => {
     switch (type) {
@@ -16,12 +20,12 @@ const ActivityFeed = () => {
 
   return (
     <div className="space-y-6">
-      {activities.map((activity, idx) => {
+      {myActivities.map((activity, idx) => {
         const { icon: Icon, color } = getActivityIcon(activity.type)
         return (
           <div key={activity.id} className="relative pl-8 group cursor-pointer">
             {/* Timeline connector line */}
-            {idx !== activities.length - 1 && (
+            {idx !== myActivities.length - 1 && (
               <div className="absolute left-[15px] top-6 bottom-[-24px] w-[2px] bg-border/40 group-hover:bg-primary/20 transition-colors" />
             )}
             
@@ -45,7 +49,7 @@ const ActivityFeed = () => {
         )
       })}
 
-      {activities.length === 0 && (
+      {myActivities.length === 0 && (
         <div className="py-10 text-center text-muted-foreground italic text-sm">
           No interaction history logged yet.
         </div>

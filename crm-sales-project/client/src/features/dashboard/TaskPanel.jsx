@@ -1,15 +1,19 @@
 import React from "react"
 import { CheckCircle2, Circle, Clock, AlertTriangle } from "lucide-react"
 import { useStore } from "../../store/state"
+import { useAuth } from "../../hooks/useAuth"
 
 const TaskPanel = () => {
   const { tasks, toggleTask } = useStore()
+  const { user } = useAuth()
 
-  // Sorted by uncompleted and descending ID
-  const sortedTasks = [...tasks].sort((a, b) => {
-    if (a.completed !== b.completed) return a.completed ? 1 : -1
-    return b.id - a.id
-  })
+  // Filter tasks for current user and sort by uncompleted and descending ID
+  const sortedTasks = tasks
+    .filter(t => t.assignedTo === user?.id)
+    .sort((a, b) => {
+      if (a.completed !== b.completed) return a.completed ? 1 : -1
+      return b.id - a.id
+    })
 
   const getPriorityColor = (priority) => {
     switch (priority) {

@@ -10,9 +10,11 @@ import {
   Cell,
 } from "recharts"
 import { useStore } from "../../store/state"
+import { useAuth } from "../../hooks/useAuth"
 
 const FunnelChart = () => {
   const { leads } = useStore()
+  const { user } = useAuth()
 
   // Define the stages in order
   const stages = [
@@ -25,11 +27,13 @@ const FunnelChart = () => {
     { name: "Negotiation", color: "#1e3a8a" },
     { name: "Won", color: "#166534" },
   ]
+  
+  const myLeads = leads.filter(l => l.assignedTo === user?.id)
 
   // Calculate live counts for each stage
   const data = stages.map(stage => ({
     name: stage.name,
-    value: leads.filter(l => l.status === stage.name).length,
+    value: myLeads.filter(l => l.status === stage.name).length,
     color: stage.color
   })).filter(d => d.value >= 0) // Keep all stages for funnel visualization
 

@@ -3,9 +3,11 @@ import { X } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { Input } from "../../components/ui/Input"
 import { useStore } from "../../store/state"
+import { useAuth } from "../../hooks/useAuth"
 
 const TaskForm = ({ isOpen, onClose }) => {
   const { addTask } = useStore()
+  const { user } = useAuth()
   const [formData, setFormData] = useState({
     title: "",
     dueDate: new Date().toISOString().split("T")[0],
@@ -18,6 +20,7 @@ const TaskForm = ({ isOpen, onClose }) => {
       ...formData,
       id: Date.now(),
       completed: false,
+      assignedTo: user?.id,
     })
     onClose()
   }

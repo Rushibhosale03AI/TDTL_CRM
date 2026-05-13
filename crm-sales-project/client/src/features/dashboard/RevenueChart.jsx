@@ -9,18 +9,22 @@ import {
   ResponsiveContainer,
 } from "recharts"
 import { useStore } from "../../store/state"
+import { useAuth } from "../../hooks/useAuth"
 
 const RevenueChart = () => {
   const { leads, monthlyTarget } = useStore()
+  const { user } = useAuth()
 
   // Process data for the chart
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
   
   // Initialize data array
   const rawData = months.map(m => ({ name: m, revenue: 0, target: monthlyTarget }))
+  
+  const myLeads = leads.filter(l => l.assignedTo === user?.id)
 
   // Fill in revenue from "Won" leads
-  leads.forEach(lead => {
+  myLeads.forEach(lead => {
     if (lead.status === "Won") {
       const monthIndex = new Date(lead.date).getMonth()
       const monthName = months[monthIndex]
