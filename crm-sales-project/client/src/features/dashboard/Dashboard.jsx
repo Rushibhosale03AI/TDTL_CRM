@@ -7,74 +7,83 @@ import ActivityFeed from "./ActivityFeed"
 import TaskForm from "./TaskForm"
 import { Button } from "../../components/ui/Button"
 import { Input } from "../../components/ui/Input"
-import { Plus, CheckSquare, BarChart3, History, Target } from "lucide-react"
-import { useStore } from "../../store/state"
+import { Badge } from "../../components/ui/Badge"
+import { Plus, CheckSquare, BarChart3, History, Target, Users, ArrowRight } from "lucide-react"
+import { useTasks } from "../../hooks/useTasks"
+import { useDashboard } from "../../hooks/useDashboard"
+import { useLeads } from "../../hooks/useLeads"
 import { useNavigate } from "react-router-dom"
+import QuickExcelActions from "./QuickExcelActions"
 
 const Dashboard = () => {
-  const { tasks, monthlyTarget, setMonthlyTarget } = useStore()
+  const { tasks } = useTasks()
+  const { leads } = useLeads()
+  const { data: dashboardData } = useDashboard()
   const navigate = useNavigate()
   const [isTaskModalOpen, setIsTaskModalOpen] = useState(false)
+  
+  const [monthlyTarget, setMonthlyTarget] = useState(50000)
   const [isSettingTarget, setIsSettingTarget] = useState(false)
   const [tempTarget, setTempTarget] = useState(monthlyTarget)
 
-  const pendingTasksCount = tasks.filter(t => !t.completed).length
+  const pendingTasksCount = Array.isArray(tasks) ? tasks.filter(t => !t.completed).length : 0
+  
+  // Get recent 5 leads
+  const recentLeads = Array.isArray(leads) ? leads.slice(0, 5) : []
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-700">
-      {/* Header section */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div className="space-y-8 animate-in fade-in slide-in-from-top-4 duration-500">
+      {/* Header section with Royal Violet Gradient */}
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between p-6 rounded-2xl bg-gradient-to-r from-primary/10 via-purple-500/5 to-transparent border border-primary/10 backdrop-blur-sm">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Sales Dashboard</h1>
-          <p className="text-muted-foreground mt-1 text-sm lg:text-base">
-            Detailed performance tracking and actionable reminders.
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+            Sales Dashboard
+          </h1>
+          <p className="text-muted-foreground mt-1 text-sm lg:text-base font-medium">
+            Real-time performance metrics, predictive leads, and daily goals.
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={() => navigate("/leads")} className="h-9">
+        <div className="flex items-center gap-3">
+          <Button variant="outline" size="sm" onClick={() => navigate("/leads")} className="h-10 font-bold px-5 hover-glow active-shrink rounded-xl">
             Manage Leads
           </Button>
-          <Button size="sm" className="h-9 flex items-center gap-2" onClick={() => setIsTaskModalOpen(true)}>
+          <Button size="sm" className="h-10 flex items-center gap-2 font-bold px-5 bg-primary hover:opacity-95 shadow-lg shadow-primary/20 hover-glow active-shrink rounded-xl" onClick={() => setIsTaskModalOpen(true)}>
             <Plus className="h-4 w-4" />
             Add New Task
           </Button>
         </div>
       </div>
 
+      {/* Quick Excel Actions Hub */}
+      <QuickExcelActions />
+
       {/* Primary KPI Row */}
       <KpiCards />
 
-      {/* Analytics & Tasks Row */}
+      {/* Analytics Row */}
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Revenue Growth Chart */}
-        <div className="lg:col-span-2 rounded-xl border bg-card p-6 shadow-sm flex flex-col">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2">
-              <BarChart3 className="h-5 w-5 text-primary" />
-              <h3 className="font-semibold text-lg">Revenue Performance</h3>
+        <div className="lg:col-span-2 rounded-2xl border p-8 shadow-sm flex flex-col glass-card hover-glow transition-all duration-300">
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-primary/10 text-primary">
+                <BarChart3 className="h-6 w-6" />
+              </div>
+              <h3 className="font-extrabold text-xl tracking-tight">Revenue Performance</h3>
             </div>
             <div className="flex items-center gap-4">
-              <div className="hidden sm:flex items-center gap-2">
-                <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-muted/50 text-[10px] font-bold uppercase tracking-wider">
-                  <span className="h-2 w-2 rounded-full bg-primary" /> Revenue
-                </div>
-                <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-muted/50 text-[10px] font-bold uppercase tracking-wider">
-                  <span className="h-2 w-2 rounded-full bg-slate-400" /> Target
-                </div>
-              </div>
-
               {isSettingTarget ? (
                 <div className="flex items-center gap-2">
                   <Input 
                     type="number"
-                    className="h-8 w-24 text-xs"
+                    className="h-9 w-28 text-sm"
                     value={tempTarget}
                     onChange={(e) => setTempTarget(e.target.value)}
                     autoFocus
                   />
                   <Button 
                     size="sm" 
-                    className="h-8 px-2"
+                    className="h-9 px-4 font-bold"
                     onClick={() => {
                       setMonthlyTarget(Number(tempTarget))
                       setIsSettingTarget(false)
@@ -87,62 +96,105 @@ const Dashboard = () => {
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className="h-8 text-[10px] font-bold text-muted-foreground uppercase flex items-center gap-1.5 border hover:bg-muted"
+                  className="h-9 text-[11px] font-black text-muted-foreground uppercase flex items-center gap-2 border bg-muted/30 hover:bg-muted rounded-lg"
                   onClick={() => setIsSettingTarget(true)}
                 >
-                  <Target className="h-3 w-3" />
-                  Set Target: ${monthlyTarget.toLocaleString()}
+                  <Target className="h-4 w-4" />
+                  Target: ₹{monthlyTarget.toLocaleString()}
                 </Button>
               )}
             </div>
           </div>
-          <RevenueChart />
+          <div className="h-[300px]">
+            <RevenueChart />
+          </div>
         </div>
 
         {/* Task Reminders Panel */}
-        <div className="rounded-xl border bg-card p-6 shadow-sm flex flex-col">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2">
-              <CheckSquare className="h-5 w-5 text-primary" />
-              <h3 className="font-semibold text-lg">Task Reminders</h3>
+        <div className="rounded-2xl border p-8 shadow-sm flex flex-col glass-card hover-glow transition-all duration-300">
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-orange-500/10 text-orange-500">
+                <CheckSquare className="h-6 w-6" />
+              </div>
+              <h3 className="font-extrabold text-xl tracking-tight">Tasks</h3>
             </div>
             {pendingTasksCount > 0 && (
-              <span className="h-5 min-w-5 flex items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
-                {pendingTasksCount}
-              </span>
+              <Badge className="bg-orange-500 text-white border-none font-black px-2 py-0.5 rounded-full text-[10px]">
+                {pendingTasksCount} PENDING
+              </Badge>
             )}
           </div>
-          <div className="flex-1 overflow-y-auto max-h-[300px] pr-1 custom-scrollbar">
+          <div className="flex-1 overflow-y-auto max-h-[300px] pr-2 custom-scrollbar">
             <TaskPanel />
           </div>
-          <Button variant="ghost" className="w-full mt-4 text-xs font-bold text-primary hover:bg-primary/5">
-            VIEW ALL TASKS
+          <Button variant="outline" className="w-full mt-6 text-xs font-black uppercase tracking-widest border-2 hover:bg-muted rounded-xl hover-glow active-shrink" onClick={() => navigate("/pipeline")}>
+            GO TO PIPELINE
           </Button>
         </div>
       </div>
 
-      {/* Pipeline & Activity History Row */}
-      <div className="grid gap-6 lg:grid-cols-2">
-        {/* Sales Funnel */}
-        <div className="rounded-xl border bg-card p-6 shadow-sm flex flex-col">
+      {/* RECENT DATA SECTION (Showing actual entered data) */}
+      <div className="grid gap-6 lg:grid-cols-5">
+        <div className="lg:col-span-3 rounded-2xl border p-8 shadow-sm glass-card hover-glow transition-all duration-300">
           <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-2">
-              <h3 className="font-semibold text-lg">Sales Funnel</h3>
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-indigo-500/10 text-indigo-500">
+                <Users className="h-6 w-6" />
+              </div>
+              <h3 className="font-extrabold text-xl tracking-tight">Recent Opportunities</h3>
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground p-1 border rounded px-2">Live Pipeline</span>
+            <Button variant="ghost" size="sm" className="text-xs font-bold text-primary group" onClick={() => navigate("/leads")}>
+              View All Leads <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
-          <div className="h-[350px] w-full">
-            <FunnelChart />
+          
+          <div className="overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="text-[10px] uppercase tracking-widest font-black text-muted-foreground border-b pb-4">
+                  <th className="pb-3 px-2">Lead</th>
+                  <th className="pb-3 px-2">Status</th>
+                  <th className="pb-3 px-2 text-right">Value</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border/50">
+                {recentLeads.length === 0 ? (
+                  <tr>
+                    <td colSpan="3" className="py-8 text-center text-sm text-muted-foreground italic">
+                      No recent leads found.
+                    </td>
+                  </tr>
+                ) : (
+                  recentLeads.map((lead) => (
+                    <tr key={lead.id} className="hover:bg-muted/30 transition-colors group cursor-pointer" onClick={() => navigate("/leads")}>
+                      <td className="py-4 px-2">
+                        <div className="flex flex-col">
+                          <span className="font-bold text-sm group-hover:text-primary transition-colors">{lead.name}</span>
+                          <span className="text-[10px] text-muted-foreground uppercase font-semibold">{lead.company}</span>
+                        </div>
+                      </td>
+                      <td className="py-4 px-2">
+                        <Badge variant="outline" className="text-[9px] font-black rounded-md">{lead.status.toUpperCase()}</Badge>
+                      </td>
+                      <td className="py-4 px-2 text-right font-bold text-sm">
+                        ₹{Number(lead.value).toLocaleString()}
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
           </div>
         </div>
 
         {/* Activity & History Feed */}
-        <div className="rounded-xl border bg-card p-6 shadow-sm flex flex-col">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-2">
-              <History className="h-5 w-5 text-primary" />
-              <h3 className="font-semibold text-lg">Interaction History</h3>
+        <div className="lg:col-span-2 rounded-2xl border p-8 shadow-sm glass-card hover-glow transition-all duration-300">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="p-2 rounded-xl bg-pink-500/10 text-pink-500">
+              <History className="h-6 w-6" />
             </div>
+            <h3 className="font-extrabold text-xl tracking-tight">Interaction History</h3>
           </div>
           <div className="flex-1 overflow-y-auto max-h-[350px] pr-2 custom-scrollbar">
             <ActivityFeed />

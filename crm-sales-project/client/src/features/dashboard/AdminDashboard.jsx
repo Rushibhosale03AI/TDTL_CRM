@@ -1,13 +1,29 @@
 import React from "react"
 import { Users, Briefcase, TrendingUp } from "lucide-react"
+import { useDashboard } from "../../hooks/useDashboard"
+import QuickExcelActions from "./QuickExcelActions"
 
 const AdminDashboard = () => {
-  // Mock data for managers
-  const managers = [
-    { id: 1, name: "Sarah Connor", region: "North America", teamSize: 12, revenue: "$450,000", performance: "+15%" },
-    { id: 2, name: "John Smith", region: "Europe", teamSize: 8, revenue: "$320,000", performance: "+8%" },
-    { id: 3, name: "Elena Rodriguez", region: "Latin America", teamSize: 5, revenue: "$180,000", performance: "-2%" },
-  ]
+  const { data, loading } = useDashboard()
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="flex flex-col items-center gap-4">
+          <div className="h-12 w-12 rounded-full border-4 border-primary border-t-transparent animate-spin" />
+          <p className="text-sm font-black uppercase tracking-widest text-muted-foreground animate-pulse">Syncing System Data...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!data) return (
+    <div className="p-8 text-center rounded-2xl border border-dashed bg-muted/20">
+      <p className="text-muted-foreground font-medium">Unable to load system metrics. Please try again later.</p>
+    </div>
+  )
+
+  const { overview = {}, managers = [] } = data
 
   return (
     <div className="space-y-8 animate-in fade-in duration-700">
@@ -20,6 +36,9 @@ const AdminDashboard = () => {
         </div>
       </div>
 
+      {/* Quick Excel Actions Hub — available to Admin */}
+      <QuickExcelActions />
+
       {/* KPI Cards */}
       <div className="grid gap-4 md:grid-cols-3">
         <div className="rounded-xl border bg-card p-6 shadow-sm">
@@ -27,14 +46,14 @@ const AdminDashboard = () => {
             <h3 className="tracking-tight text-sm font-medium">Total Managers</h3>
             <Briefcase className="h-4 w-4 text-muted-foreground" />
           </div>
-          <div className="text-2xl font-bold">{managers.length}</div>
+          <div className="text-2xl font-bold">{overview.totalManagers}</div>
         </div>
         <div className="rounded-xl border bg-card p-6 shadow-sm">
           <div className="flex flex-row items-center justify-between space-y-0 pb-2">
             <h3 className="tracking-tight text-sm font-medium">Total Global Revenue</h3>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </div>
-          <div className="text-2xl font-bold">$950,000</div>
+          <div className="text-2xl font-bold">{overview.totalGlobalRevenue}</div>
           <p className="text-xs text-muted-foreground mt-1">+8.2% from last month</p>
         </div>
         <div className="rounded-xl border bg-card p-6 shadow-sm">
@@ -42,7 +61,7 @@ const AdminDashboard = () => {
             <h3 className="tracking-tight text-sm font-medium">Total Sales Reps</h3>
             <Users className="h-4 w-4 text-muted-foreground" />
           </div>
-          <div className="text-2xl font-bold">25</div>
+          <div className="text-2xl font-bold">{overview.totalSalesReps}</div>
         </div>
       </div>
 

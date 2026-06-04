@@ -9,33 +9,34 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts"
-import { useStore } from "../../store/state"
-import { useAuth } from "../../hooks/useAuth"
+import { useDashboard } from "../../hooks/useDashboard"
 
 const FunnelChart = () => {
-  const { leads } = useStore()
-  const { user } = useAuth()
+  const { data: dashboardData, loading } = useDashboard()
 
-  // Define the stages in order
-  const stages = [
-    { name: "New", color: "#94a3b8" },
-    { name: "Follow-up", color: "#64748b" },
-    { name: "Qualified", color: "#3b82f6" },
-    { name: "Meeting", color: "#2563eb" },
-    { name: "Requirements", color: "#1d4ed8" },
-    { name: "Proposal", color: "#1e40af" },
-    { name: "Negotiation", color: "#1e3a8a" },
-    { name: "Won", color: "#166534" },
-  ]
+  if (loading) return <div className="h-[400px] w-full flex items-center justify-center text-muted-foreground">Loading chart...</div>
+
+  if (!dashboardData || !dashboardData.funnelData) {
+    return <div className="h-[400px] w-full flex items-center justify-center text-muted-foreground text-sm">No funnel data available</div>
+  }
+
+  // Define the colors in order
+  const stageColors = {
+    "New": "#94a3b8",
+    "Follow-up": "#64748b",
+    "Qualified": "#3b82f6",
+    "Meeting": "#2563eb",
+    "Requirements": "#1d4ed8",
+    "Proposal": "#1e40af",
+    "Negotiation": "#1e3a8a",
+    "Won": "#166534",
+    "Lost": "#ef4444"
+  }
   
-  const myLeads = leads.filter(l => l.assignedTo === user?.id)
-
-  // Calculate live counts for each stage
-  const data = stages.map(stage => ({
-    name: stage.name,
-    value: myLeads.filter(l => l.status === stage.name).length,
-    color: stage.color
-  })).filter(d => d.value >= 0) // Keep all stages for funnel visualization
+  const data = dashboardData.funnelData.map(d => ({
+    ...d,
+    color: stageColors[d.name] || "#ccc"
+  }))
 
   return (
     <ResponsiveContainer width="100%" height="100%">

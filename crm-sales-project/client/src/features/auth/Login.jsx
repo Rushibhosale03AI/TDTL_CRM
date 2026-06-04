@@ -9,20 +9,52 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
-  const { login } = useAuth()
+  const { login, isAuthenticated, error: authError } = useAuth()
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  // Clear any stale tokens on mount to avoid 401 errors
+  React.useEffect(() => {
+    const hasOldToken = localStorage.getItem('access_token')
+    if (hasOldToken && !isAuthenticated) {
+      // Clear potentially invalid tokens
+      localStorage.removeItem('access_token')
+      localStorage.removeItem('refresh_token')
+    }
+  }, [isAuthenticated])
+
+  // Redirect if already authenticated
+  React.useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/dashboard")
+    }
+  }, [isAuthenticated, navigate])
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError("")
     
-    const success = login(email, password)
+    if (!email || !password) {
+      setError("Please enter both email and password")
+      return
+    }
+    
+    const success = await login(email, password)
     if (success) {
       navigate("/dashboard")
     } else {
-      setError("Invalid email or password")
+      // Error will be set by authError useEffect
+      if (!authError) {
+        setError("Login failed. Please check your credentials and try again.")
+      }
     }
   }
+
+  // Update local error when authError changes
+  React.useEffect(() => {
+    if (authError) {
+      setError(authError)
+    }
+  }, [authError])
 
   const handleTestLogin = (testEmail) => {
     setEmail(testEmail)

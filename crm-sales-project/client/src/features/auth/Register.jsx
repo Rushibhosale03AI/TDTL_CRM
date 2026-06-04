@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom"
 import { Button } from "../../components/ui/Button"
 import { Input } from "../../components/ui/Input"
 import { LayoutDashboard } from "lucide-react"
+import { useAuth } from "../../hooks/useAuth"
 import { useStore } from "../../store/state"
 
 const Register = () => {
@@ -12,24 +13,52 @@ const Register = () => {
   const [role, setRole] = useState("sales")
   const [managerId, setManagerId] = useState("")
   const navigate = useNavigate()
-  
-  const { mockUsers, registerUser } = useStore()
-  
-  const managers = mockUsers.filter(u => u.role === "manager")
+  const [managers, setManagers] = useState([])
+  const { register, isAuthenticated, error } = useAuth()
 
-  const handleSubmit = (e) => {
+  // Redirect if already authenticated
+  React.useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/dashboard")
+    }
+  }, [isAuthenticated, navigate])
+
+  React.useEffect(() => {
+    const fetchManagers = async () => {
+      try {
+        // Fetch managers from API using the public managers endpoint
+        const response = await fetch('http://127.0.0.1:8000/api/auth/managers/');
+        if (response.ok) {
+          const data = await response.json();
+          // Check if data is paginated (has results array) or just an array
+          setManagers(data.results || data || []);
+        }
+      } catch (err) {
+        console.error("Failed to fetch managers", err);
+      }
+    };
+    fetchManagers();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     
+    const [firstName, ...lastNameParts] = name.trim().split(" ")
+    const lastName = lastNameParts.join(" ")
+
     const newUser = {
-      name,
+      first_name: firstName,
+      last_name: lastName || "",
       email,
       password,
-      role,
+      role: role.toUpperCase(), // Backend expects uppercase roles
       ...(role === 'sales' && managerId ? { managerId: Number(managerId) } : {})
     }
     
-    registerUser(newUser)
-    navigate("/login")
+    const success = await register(newUser)
+    if (success) {
+      navigate("/login")
+    }
   }
 
   return (
@@ -44,6 +73,12 @@ const Register = () => {
             Enter your details to get started
           </p>
         </div>
+
+        {error && (
+          <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive font-medium text-center mb-4">
+            {error}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">

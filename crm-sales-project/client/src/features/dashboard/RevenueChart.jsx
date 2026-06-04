@@ -8,32 +8,18 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts"
-import { useStore } from "../../store/state"
-import { useAuth } from "../../hooks/useAuth"
+import { useDashboard } from "../../hooks/useDashboard"
 
 const RevenueChart = () => {
-  const { leads, monthlyTarget } = useStore()
-  const { user } = useAuth()
+  const { data: dashboardData, loading } = useDashboard()
 
-  // Process data for the chart
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+  if (loading) return <div className="h-[300px] w-full flex items-center justify-center text-muted-foreground">Loading chart...</div>
   
-  // Initialize data array
-  const rawData = months.map(m => ({ name: m, revenue: 0, target: monthlyTarget }))
-  
-  const myLeads = leads.filter(l => l.assignedTo === user?.id)
+  if (!dashboardData || !dashboardData.revenueData) {
+    return <div className="h-[300px] w-full flex items-center justify-center text-muted-foreground text-sm">No revenue data available</div>
+  }
 
-  // Fill in revenue from "Won" leads
-  myLeads.forEach(lead => {
-    if (lead.status === "Won") {
-      const monthIndex = new Date(lead.date).getMonth()
-      const monthName = months[monthIndex]
-      const dataPoint = rawData.find(d => d.name === monthName)
-      if (dataPoint) {
-        dataPoint.revenue += Number(lead.value || 0)
-      }
-    }
-  })
+  const rawData = dashboardData.revenueData
 
   return (
     <div className="h-[300px] w-full">
@@ -64,7 +50,7 @@ const RevenueChart = () => {
             axisLine={false} 
             tickLine={false} 
             tick={{ fontSize: 10, fill: '#64748b' }}
-            tickFormatter={(value) => `$${value / 1000}k`}
+            tickFormatter={(value) => `₹${value / 1000}k`}
           />
           <Tooltip 
             contentStyle={{ 
@@ -73,7 +59,7 @@ const RevenueChart = () => {
               boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
               fontSize: '12px'
             }}
-            formatter={(value) => [`$${value.toLocaleString()}`, '']}
+            formatter={(value) => [`₹${value.toLocaleString()}`, '']}
           />
           <Area
             type="monotone"

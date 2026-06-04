@@ -2,76 +2,65 @@ import React from "react"
 import { 
   Users, 
   TrendingUp, 
-  DollarSign, 
+  IndianRupee, 
   Clock 
 } from "lucide-react"
-import { useStore } from "../../store/state"
+import { useDashboard } from "../../hooks/useDashboard"
 import { useAuth } from "../../hooks/useAuth"
 
-const KpiCard = ({ title, value, subtext, icon: Icon, colorClass }) => (
+const KpiCard = ({ title, value, trend, icon: Icon, colorClass }) => (
   <div className="rounded-xl border bg-card p-6 shadow-sm">
     <div className="flex items-center justify-between space-y-0 pb-2">
       <h3 className="text-sm font-medium">{title}</h3>
       <Icon className={`h-4 w-4 ${colorClass}`} />
     </div>
     <div className="text-2xl font-bold">{value}</div>
-    <p className="text-xs text-muted-foreground">{subtext}</p>
+    <p className="text-xs text-muted-foreground">{trend}</p>
   </div>
 )
 
 const KpiCards = () => {
-  const { leads } = useStore()
-  const { user } = useAuth()
+  const { data, loading } = useDashboard()
   
-  // Filter leads assigned to the current user
-  const myLeads = leads.filter(l => l.assignedTo === user?.id)
+  if (loading) {
+    return (
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {[1, 2, 3, 4].map(i => (
+          <div key={i} className="h-32 rounded-xl border bg-card p-6 animate-pulse" />
+        ))}
+      </div>
+    )
+  }
 
-  // Dynamic calculations
-  const totalLeads = myLeads.length
-  const wonLeads = myLeads.filter(l => l.status === "Won")
-  const convertedCount = wonLeads.length
-  const totalRevenue = wonLeads.reduce((sum, l) => sum + Number(l.value || 0), 0)
-  const pendingLeads = myLeads.filter(l => !["Won", "Lost"].includes(l.status)).length
+  const kpiCards = data?.kpiCards || []
+  if (kpiCards.length === 0) return null
 
-  const conversionRate = totalLeads > 0 
-    ? ((convertedCount / totalLeads) * 100).toFixed(1) 
-    : 0
+  const iconMap = {
+    Users,
+    TrendingUp,
+    IndianRupee,
+    Clock,
+    Percent: TrendingUp // Fallback
+  }
 
-  const kpis = [
-    {
-      title: "Total Leads",
-      value: totalLeads.toLocaleString(),
-      subtext: "Live database count",
-      icon: Users,
-      colorClass: "text-blue-500",
-    },
-    {
-      title: "Converted",
-      value: convertedCount.toLocaleString(),
-      subtext: `${conversionRate}% conversion rate`,
-      icon: TrendingUp,
-      colorClass: "text-green-500",
-    },
-    {
-      title: "Revenue",
-      value: `$${totalRevenue.toLocaleString()}`,
-      subtext: "From won deals only",
-      icon: DollarSign,
-      colorClass: "text-indigo-500",
-    },
-    {
-      title: "Pipeline Active",
-      value: pendingLeads.toLocaleString(),
-      subtext: "In progress deals",
-      icon: Clock,
-      colorClass: "text-yellow-500",
-    },
-  ]
+  const colorMap = {
+    "Total Leads": "text-blue-500",
+    "Active Pipeline": "text-indigo-500",
+    "Closed Revenue": "text-green-500",
+    "Conversion Rate": "text-yellow-500"
+  }
 
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {kpis.map((kpi) => (
-        <KpiCard key={kpi.title} {...kpi} />
+      {kpiCards.map((kpi) => (
+        <KpiCard 
+          key={kpi.title} 
+          title={kpi.title}
+          value={kpi.value}
+          trend={kpi.trend}
+          icon={iconMap[kpi.icon] || Users}
+          colorClass={colorMap[kpi.title] || "text-primary"}
+        />
       ))}
     </div>
   )

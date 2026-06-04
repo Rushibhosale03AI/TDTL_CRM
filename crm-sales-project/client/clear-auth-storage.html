@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Auth Storage</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #4f46e5;
+        }
+        .success {
+            background: #10b981;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 20px;
+            display: none;
+        }
+        .info {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 12px;
+            margin-top: 20px;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Clear Authentication Storage</h1>
+        <p>This tool will clear any stale authentication tokens from your browser's localStorage that might be causing login issues.</p>
+        
+        <div class="info">
+            <strong>What will be cleared:</strong>
+            <ul>
+                <li>access_token</li>
+                <li>refresh_token</li>
+            </ul>
+        </div>
+
+        <button onclick="clearStorage()">Clear Auth Storage & Reload</button>
+        
+        <div id="success" class="success">
+            ✅ Auth storage cleared successfully! Redirecting to login page...
+        </div>
+    </div>
+
+    <script>
+        function clearStorage() {
+            // Clear auth tokens
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('refresh_token');
+            
+            // Show success message
+            document.getElementById('success').style.display = 'block';
+            
+            // Redirect to login page after 1.5 seconds
+            setTimeout(() => {
+                window.location.href = '/login';
+            }, 1500);
+        }
+
+        // Auto-clear if URL has ?clear=true
+        if (window.location.search.includes('clear=true')) {
+            clearStorage();
+        }
+    </script>
+</body>
+</html>

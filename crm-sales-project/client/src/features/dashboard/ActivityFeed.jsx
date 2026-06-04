@@ -1,13 +1,13 @@
 import React from "react"
 import { Phone, Mail, Calendar, Info, ChevronRight } from "lucide-react"
-import { useStore } from "../../store/state"
+import { useActivities } from "../../hooks/useActivities"
 import { useAuth } from "../../hooks/useAuth"
 
 const ActivityFeed = () => {
-  const { activities } = useStore()
+  const { activities } = useActivities()
   const { user } = useAuth()
   
-  const myActivities = activities.filter(a => a.assignedTo === user?.id)
+  const myActivities = activities
 
   const getActivityIcon = (type) => {
     switch (type) {
@@ -39,7 +39,7 @@ const ActivityFeed = () => {
                 <span className="text-[10px] font-bold text-muted-foreground uppercase">{activity.date}</span>
               </div>
               <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
-                {activity.desc}
+                {activity.content}
               </p>
               <div className="mt-2 flex items-center gap-1 text-[10px] text-primary font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                 VIEW DETAILS <ChevronRight className="h-3 w-3" />

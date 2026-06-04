@@ -1,0 +1,1058 @@
+WARNING 2026-05-14 09:26:10,826 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 09:26:24,499 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 09:26:29,284 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 09:27:23,865 log Bad Request: /api/auth/login/
+WARNING 2026-05-14 09:27:24,335 log Unauthorized: /api/leads/
+WARNING 2026-05-14 09:27:24,528 log Unauthorized: /api/dashboard/admin/
+WARNING 2026-05-14 09:28:40,722 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 09:30:48,396 log Unauthorized: /api/auth/login/
+WARNING 2026-05-14 09:30:48,646 log Unauthorized: /api/auth/login/
+WARNING 2026-05-14 09:31:02,835 log Unauthorized: /api/auth/login/
+WARNING 2026-05-14 09:31:03,615 log Unauthorized: /api/auth/login/
+WARNING 2026-05-14 09:31:35,313 log Not Found: /favicon.ico
+WARNING 2026-05-14 09:31:41,639 log Not Found: /
+WARNING 2026-05-14 09:31:43,490 log Not Found: /
+WARNING 2026-05-14 09:31:44,438 log Not Found: /
+WARNING 2026-05-14 09:31:45,293 log Not Found: /
+WARNING 2026-05-14 09:56:37,861 log Not Found: /favicon.ico
+WARNING 2026-05-14 09:57:20,484 log Not Found: /api/auth/
+WARNING 2026-05-14 09:57:29,673 log Not Found: /api/auth/
+WARNING 2026-05-14 09:59:05,376 log Bad Request: /api/auth/register/
+WARNING 2026-05-14 10:17:33,613 log Bad Request: /api/auth/register/
+WARNING 2026-05-14 10:17:58,966 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 10:17:58,976 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 10:17:59,009 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 10:17:59,034 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 10:17:59,061 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 10:17:59,080 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 10:18:16,339 log Unauthorized: /api/auth/login/
+WARNING 2026-05-14 10:18:17,314 log Unauthorized: /api/auth/login/
+WARNING 2026-05-14 10:18:24,203 log Unauthorized: /api/auth/login/
+WARNING 2026-05-14 10:18:25,052 log Unauthorized: /api/auth/login/
+WARNING 2026-05-14 11:07:25,486 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 11:07:25,504 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 11:07:25,827 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 11:07:25,849 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 11:07:25,867 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 11:07:25,925 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 11:07:57,030 log Unauthorized: /api/auth/login/
+WARNING 2026-05-14 12:27:15,587 log Bad Request: /api/auth/register/
+WARNING 2026-05-14 12:34:06,865 log Bad Request: /api/auth/register/
+WARNING 2026-05-14 12:35:25,487 log Bad Request: /api/auth/register/
+WARNING 2026-05-14 12:45:31,068 log Unauthorized: /api/auth/users/
+WARNING 2026-05-14 12:50:49,173 log Not Found: /api/auth/me/2/
+WARNING 2026-05-14 12:50:55,494 log Not Found: /api/auth/me/3/
+WARNING 2026-05-14 12:51:03,595 log Not Found: /api/auth/3/
+WARNING 2026-05-14 13:00:49,702 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 13:00:49,713 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 13:47:27,107 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 13:47:27,191 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 14:03:49,293 log Unauthorized: /api/leads/
+WARNING 2026-05-14 14:04:27,607 log Unauthorized: /api/leads/
+WARNING 2026-05-14 14:05:12,631 log Unauthorized: /api/leads/
+WARNING 2026-05-14 14:05:54,082 log Unauthorized: /api/leads/
+WARNING 2026-05-14 14:06:25,220 log Bad Request: /api/auth/register/
+WARNING 2026-05-14 14:12:57,279 log Not Found: /favicon.ico
+WARNING 2026-05-14 14:59:44,703 log Bad Request: /api/auth/register/
+WARNING 2026-05-14 15:01:25,843 log Method Not Allowed: /api/auth/login/
+WARNING 2026-05-14 15:07:31,407 log Unauthorized: /api/auth/me/
+WARNING 2026-05-14 15:08:09,590 log Method Not Allowed: /api/auth/me/
+WARNING 2026-05-14 15:09:16,327 log Unauthorized: /api/leads/
+WARNING 2026-05-14 15:09:58,689 log Unauthorized: /api/leads/
+WARNING 2026-05-14 15:27:29,389 log Unauthorized: /api/deals/{id}/
+WARNING 2026-05-14 15:27:43,379 log Method Not Allowed: /api/deals/{id}/
+WARNING 2026-05-14 15:27:49,824 log Not Found: /api/deals/{id}/
+WARNING 2026-05-14 15:28:02,625 log Unauthorized: /api/deals/{id}/
+WARNING 2026-05-14 15:28:58,488 log Not Found: /api/deals/{id}/
+WARNING 2026-05-14 15:32:49,330 log Unauthorized: /api/activities/
+WARNING 2026-05-14 15:33:21,599 log Unauthorized: /api/activities/
+WARNING 2026-05-14 15:59:38,736 log Unauthorized: /api/activities/
+WARNING 2026-05-15 10:08:22,262 log Bad Request: /api/auth/register/
+WARNING 2026-05-15 10:11:56,473 log Bad Request: /api/auth/register/
+ERROR 2026-05-15 11:38:04,661 log Internal Server Error: /api/auth/register/
+WARNING 2026-05-15 11:38:38,742 log Bad Request: /api/auth/register/
+WARNING 2026-05-15 11:39:56,908 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 11:40:06,707 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 11:40:07,594 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 11:40:46,144 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 11:41:49,128 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 11:42:37,752 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 11:48:45,514 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 11:48:56,571 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 11:58:16,561 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 11:58:33,292 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 11:58:33,865 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 11:59:48,999 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 11:59:49,012 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 11:59:53,395 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 12:00:00,758 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 12:11:25,577 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 12:53:28,753 log Unauthorized: /api/auth/me/
+WARNING 2026-05-15 12:53:28,765 log Unauthorized: /api/auth/me/
+WARNING 2026-05-15 12:53:28,773 log Unauthorized: /api/auth/me/
+WARNING 2026-05-15 12:53:28,784 log Unauthorized: /api/auth/me/
+WARNING 2026-05-15 12:53:28,815 log Unauthorized: /api/auth/me/
+WARNING 2026-05-15 12:53:28,828 log Unauthorized: /api/auth/me/
+WARNING 2026-05-15 12:53:29,403 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 12:53:29,488 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 12:53:29,506 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 12:53:29,554 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 12:53:29,597 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 12:53:29,609 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 12:55:54,819 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 12:56:51,154 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 12:56:51,175 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 13:04:40,028 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 13:04:40,057 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 13:06:48,086 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 13:58:01,868 log Not Found: /api/users/
+WARNING 2026-05-15 13:58:01,955 log Not Found: /api/users/
+WARNING 2026-05-15 13:58:03,301 log Not Found: /api/users/
+WARNING 2026-05-15 13:58:03,334 log Not Found: /api/users/
+WARNING 2026-05-15 13:58:24,699 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 15:33:48,247 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 15:34:08,895 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 15:34:09,105 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 15:34:50,933 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 15:37:25,369 log Bad Request: /api/auth/register/
+WARNING 2026-05-15 15:37:50,017 log Forbidden: /api/auth/login/
+WARNING 2026-05-15 17:10:08,225 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 17:10:08,492 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-15 17:11:55,271 log Not Found: /api/users/
+WARNING 2026-05-15 17:11:55,304 log Not Found: /api/users/
+WARNING 2026-05-15 17:11:58,172 log Not Found: /api/users/
+WARNING 2026-05-15 17:11:58,202 log Not Found: /api/users/
+WARNING 2026-05-15 17:30:24,196 log Not Found: /api/users/
+WARNING 2026-05-15 17:30:24,257 log Not Found: /api/users/
+ERROR 2026-05-15 17:31:39,295 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:31:48,009 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:31:48,032 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:31:56,540 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-15 17:31:56,564 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-15 17:31:58,028 log Not Found: /api/users/
+ERROR 2026-05-15 17:31:58,032 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:31:58,055 log Not Found: /api/users/
+ERROR 2026-05-15 17:31:58,064 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:31:58,080 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:31:58,098 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:32:21,717 log Not Found: /api/users/
+ERROR 2026-05-15 17:32:21,721 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:32:21,768 log Not Found: /api/users/
+ERROR 2026-05-15 17:32:21,776 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:32:21,805 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:32:21,827 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:32:30,716 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:32:30,752 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:32:33,811 log Not Found: /api/users/
+ERROR 2026-05-15 17:32:33,827 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:32:33,876 log Not Found: /api/users/
+ERROR 2026-05-15 17:32:33,892 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:32:33,919 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:32:33,941 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:48:37,052 log Bad Request: /api/auth/register/
+WARNING 2026-05-15 17:49:39,037 log Not Found: /api/users/
+WARNING 2026-05-15 17:49:39,106 log Not Found: /api/users/
+WARNING 2026-05-15 17:49:41,585 log Not Found: /api/users/
+WARNING 2026-05-15 17:49:41,658 log Not Found: /api/users/
+ERROR 2026-05-15 17:50:30,319 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:51:30,279 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:51:30,314 log Not Found: /api/users/
+ERROR 2026-05-15 17:51:30,349 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:51:30,428 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:51:30,456 log Not Found: /api/users/
+ERROR 2026-05-15 17:51:30,495 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:51:37,634 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:51:37,671 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:51:41,148 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:51:41,177 log Not Found: /api/users/
+ERROR 2026-05-15 17:51:41,215 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:51:41,242 log Not Found: /api/users/
+ERROR 2026-05-15 17:51:41,262 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:51:41,290 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:51:51,143 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:51:51,185 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:51:53,645 log Not Found: /api/users/
+WARNING 2026-05-15 17:51:53,717 log Not Found: /api/users/
+ERROR 2026-05-15 17:51:54,668 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:51:54,681 log Not Found: /api/users/
+ERROR 2026-05-15 17:51:54,730 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:51:54,747 log Not Found: /api/users/
+ERROR 2026-05-15 17:51:54,769 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:51:54,792 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:52:14,293 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:52:14,308 log Not Found: /api/users/
+ERROR 2026-05-15 17:52:14,365 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:52:14,387 log Not Found: /api/users/
+ERROR 2026-05-15 17:52:14,415 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:52:14,465 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:52:16,274 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:52:16,309 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:52:48,870 log Not Found: /api/users/
+ERROR 2026-05-15 17:52:48,904 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:52:48,926 log Not Found: /api/users/
+ERROR 2026-05-15 17:52:48,945 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:52:49,024 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:52:49,057 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:53:51,272 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:53:51,299 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 17:54:47,389 log Not Found: /api/users/
+WARNING 2026-05-15 17:54:47,461 log Not Found: /api/users/
+ERROR 2026-05-15 17:54:48,337 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 17:54:48,370 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 18:00:03,406 log Unauthorized: /api/leads/
+ERROR 2026-05-15 18:00:37,796 log Internal Server Error: /api/leads/
+ERROR 2026-05-15 18:01:13,347 log Internal Server Error: /api/leads/
+WARNING 2026-05-15 18:05:25,712 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-15 18:05:25,729 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-15 18:12:29,651 log Unauthorized: /api/auth/login/
+WARNING 2026-05-15 18:12:29,988 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 09:37:16,385 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 09:37:16,393 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 09:37:16,397 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 09:37:16,404 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 09:37:16,421 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 09:37:16,425 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 09:37:16,431 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 09:37:16,732 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 09:37:16,736 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 09:37:16,739 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 09:37:16,743 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 09:37:16,745 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 09:37:16,748 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 09:37:16,753 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 09:37:16,773 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 09:42:01,686 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 09:42:26,480 log Bad Request: /api/auth/register/
+WARNING 2026-05-16 09:42:30,076 log Bad Request: /api/auth/register/
+WARNING 2026-05-16 09:46:19,675 log Bad Request: /api/tasks/
+WARNING 2026-05-16 09:55:46,124 log Bad Request: /api/tasks/
+WARNING 2026-05-16 10:00:26,773 log Forbidden: /api/auth/login/
+WARNING 2026-05-16 10:17:11,803 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-16 10:17:11,843 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-16 10:17:14,943 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:17:15,035 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:18:18,009 log Unauthorized: /api/leads/
+WARNING 2026-05-16 10:18:18,013 log Unauthorized: /api/auth/users/
+WARNING 2026-05-16 10:18:18,022 log Unauthorized: /api/leads/
+WARNING 2026-05-16 10:18:18,024 log Unauthorized: /api/auth/users/
+WARNING 2026-05-16 10:18:18,031 log Unauthorized: /api/leads/
+WARNING 2026-05-16 10:18:18,064 log Unauthorized: /api/leads/
+WARNING 2026-05-16 10:18:18,093 log Unauthorized: /api/leads/
+WARNING 2026-05-16 10:18:18,126 log Unauthorized: /api/leads/
+WARNING 2026-05-16 10:18:42,314 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 10:28:55,844 log Forbidden: /api/auth/login/
+WARNING 2026-05-16 10:29:06,112 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 10:29:06,673 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 10:50:31,968 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:50:31,982 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:50:34,448 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:50:34,479 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:50:35,251 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:50:35,313 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:51:59,236 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:51:59,294 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:52:01,278 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:52:01,296 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:52:11,495 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 10:52:11,546 log Forbidden: /api/auth/approvals/
+ERROR 2026-05-16 10:58:56,532 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:05,240 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:22,014 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:22,105 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:22,166 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:22,207 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:39,600 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:39,637 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:39,678 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:39,713 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:39,757 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:39,801 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:39,841 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:39,892 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:41,960 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:42,043 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:42,085 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 10:59:42,123 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:47,191 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:47,240 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:47,280 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:47,310 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:47,351 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:47,390 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:47,430 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:47,474 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:48,435 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:48,475 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:48,519 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:03:48,560 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:05,714 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:05,785 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:05,836 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:05,885 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:05,923 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:05,955 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:06,046 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:06,089 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:06,125 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:06,159 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:06,201 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:06,243 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:06,343 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:06,401 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:53,970 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:53,998 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,027 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,062 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,087 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,104 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,120 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,139 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,158 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,177 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,196 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,219 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,240 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:13:54,261 log Internal Server Error: /api/dashboard/manager/
+WARNING 2026-05-16 11:17:22,302 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 11:17:22,562 log Not Found: /api//auth/token/refresh/
+WARNING 2026-05-16 11:17:35,641 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 11:20:59,827 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 11:22:30,039 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 11:23:58,906 log Bad Request: /api/teams/
+WARNING 2026-05-16 11:27:55,431 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 11:27:55,814 log Unauthorized: /api/auth/login/
+ERROR 2026-05-16 11:50:20,589 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:50:46,177 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,059 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,134 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,205 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,263 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,331 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,395 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,448 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,506 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,564 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,642 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,700 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,769 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,826 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:13,896 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:16,097 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:16,168 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:16,227 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:16,275 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,402 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,474 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,525 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,574 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,635 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,687 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,741 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,802 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,882 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,936 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:17,990 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:18,045 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:20,042 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:20,095 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:20,162 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:20,222 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:20,288 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:20,340 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:20,394 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:52:20,449 log Internal Server Error: /api/dashboard/manager/
+WARNING 2026-05-16 11:52:45,566 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-16 11:52:45,578 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-16 11:52:45,600 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-16 11:52:45,613 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-16 11:52:47,072 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 11:52:47,090 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 11:52:53,041 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 11:52:53,061 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 11:53:02,684 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-16 11:53:02,722 log Forbidden: /api/auth/approvals/
+ERROR 2026-05-16 11:53:14,287 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,364 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,419 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,490 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,560 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,618 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,672 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,727 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,807 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,855 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,911 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:14,965 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:15,052 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:15,111 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:20,715 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:20,785 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:20,871 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:20,930 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:23,378 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:23,450 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:23,521 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:23,580 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:23,660 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:23,731 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:23,823 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:23,895 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:23,972 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:24,077 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:24,159 log Internal Server Error: /api/dashboard/manager/
+ERROR 2026-05-16 11:53:24,232 log Internal Server Error: /api/dashboard/manager/
+WARNING 2026-05-16 12:35:08,418 log Bad Request: /api/auth/login/
+WARNING 2026-05-16 12:35:29,862 log Unauthorized: /api/auth/users/
+WARNING 2026-05-16 12:35:29,864 log Unauthorized: /api/dashboard/manager/
+WARNING 2026-05-16 12:35:29,868 log Unauthorized: /api/auth/approvals/
+WARNING 2026-05-16 12:35:29,869 log Unauthorized: /api/teams/
+WARNING 2026-05-16 12:35:29,875 log Unauthorized: /api/auth/users/
+WARNING 2026-05-16 12:35:29,880 log Unauthorized: /api/dashboard/manager/
+WARNING 2026-05-16 12:35:29,886 log Unauthorized: /api/auth/approvals/
+WARNING 2026-05-16 12:35:29,891 log Unauthorized: /api/teams/
+WARNING 2026-05-16 12:35:29,898 log Unauthorized: /api/auth/users/
+WARNING 2026-05-16 12:35:29,912 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 12:35:30,011 log Unauthorized: /api/auth/users/
+WARNING 2026-05-16 12:35:30,023 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 12:35:30,105 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 12:35:30,200 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 12:36:51,972 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 12:39:56,844 log Bad Request: /api/auth/register/
+WARNING 2026-05-16 12:40:29,026 log Bad Request: /api/auth/register/
+WARNING 2026-05-16 12:41:17,102 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 12:42:37,038 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 12:42:41,731 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 12:43:49,503 log Unauthorized: /api/dashboard/admin/
+WARNING 2026-05-16 12:44:00,528 log Unauthorized: /api/dashboard/admin/
+WARNING 2026-05-16 12:56:35,173 log Unauthorized: /api/dashboard/admin/
+WARNING 2026-05-16 12:56:52,748 log Unauthorized: /api/dashboard/admin/
+WARNING 2026-05-16 12:58:36,407 log Unauthorized: /api/leads/
+WARNING 2026-05-16 12:59:44,577 log Not Found: /api/api/auth/login/
+WARNING 2026-05-16 12:59:49,896 log Not Found: /api/api/auth/login/
+WARNING 2026-05-16 13:00:05,053 log Not Found: /api/api/auth/login/
+WARNING 2026-05-16 13:01:51,678 log Not Found: /api/api/auth/register/
+WARNING 2026-05-16 13:45:17,164 log Not Found: /api/api/auth/login/
+WARNING 2026-05-16 13:45:31,045 log Not Found: /api/api/auth/login/
+WARNING 2026-05-16 13:46:41,483 log Not Found: /api/api/auth/login/
+WARNING 2026-05-16 13:47:06,262 log Bad Request: /api/auth/register/
+WARNING 2026-05-16 13:47:23,667 log Not Found: /api/api/auth/login/
+WARNING 2026-05-16 13:54:19,157 log Not Found: /api/api/auth/login/
+WARNING 2026-05-16 13:54:26,931 log Not Found: /api/api/auth/login/
+WARNING 2026-05-16 13:56:39,853 log Bad Request: /api/auth/register/
+ERROR 2026-05-16 13:57:58,690 log Internal Server Error: /api/auth/login
+Traceback (most recent call last):
+  File "C:\Users\jaypu\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jaypu\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\jaypu\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jaypu\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/auth/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+WARNING 2026-05-16 13:58:45,810 log Forbidden: /api/auth/login/
+WARNING 2026-05-16 13:59:56,913 log Unauthorized: /api/dashboard/manager/
+WARNING 2026-05-16 14:00:26,241 log Unauthorized: /api/dashboard/manager/
+WARNING 2026-05-16 14:02:33,519 log Unauthorized: /api/leads/
+WARNING 2026-05-16 14:02:53,308 log Unauthorized: /api/leads/
+WARNING 2026-05-16 14:05:22,695 log Bad Request: /api/auth/register/
+WARNING 2026-05-16 14:07:44,457 log Forbidden: /api/auth/login/
+WARNING 2026-05-16 14:08:53,590 log Method Not Allowed: /api/auth/login/
+WARNING 2026-05-16 14:09:28,936 log Forbidden: /api/auth/login/
+WARNING 2026-05-16 14:12:50,137 log Unauthorized: /api/tasks/
+WARNING 2026-05-16 14:12:58,810 log Not Found: /api/task/
+WARNING 2026-05-16 14:14:00,516 log Unauthorized: /api/tasks/
+WARNING 2026-05-16 14:14:58,810 log Unauthorized: /api/tasks/
+WARNING 2026-05-16 14:16:32,343 log Unauthorized: /api/tasks/
+WARNING 2026-05-16 14:17:20,939 log Unauthorized: /api/tasks/
+WARNING 2026-05-16 14:18:10,507 log Unauthorized: /api/tasks/
+WARNING 2026-05-16 14:21:17,894 log Bad Request: /api/tasks/
+WARNING 2026-05-16 14:21:35,420 log Bad Request: /api/tasks/
+WARNING 2026-05-16 14:24:31,899 log Unauthorized: /api/teams/
+WARNING 2026-05-16 14:42:20,140 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:20,147 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:20,204 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:20,209 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:20,215 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:20,222 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:20,229 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:20,433 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:22,942 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:22,950 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:22,956 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:22,963 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:22,972 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:22,994 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:23,008 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:42:23,023 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 14:43:01,041 log Unauthorized: /api/teams/
+WARNING 2026-05-16 15:13:14,492 log Not Found: /api/sales/leads/import_excel/
+WARNING 2026-05-16 15:22:27,616 log Not Found: /api/sales/leads/import_excel/
+ERROR 2026-05-16 15:38:52,720 log Internal Server Error: /api/leads/export_excel/
+ERROR 2026-05-16 15:38:58,564 log Internal Server Error: /api/leads/export_excel/
+ERROR 2026-05-16 15:41:24,498 log Internal Server Error: /api/leads/export_excel/
+ERROR 2026-05-16 15:41:45,752 log Internal Server Error: /api/leads/export_excel/
+ERROR 2026-05-16 15:47:37,767 log Internal Server Error: /api/leads/export_excel/
+WARNING 2026-05-16 17:16:31,058 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 17:16:31,075 log Unauthorized: /api/auth/me/
+WARNING 2026-05-16 18:00:32,385 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 18:00:33,235 log Unauthorized: /api/auth/login/
+WARNING 2026-05-16 18:20:59,232 log Bad Request: /api/leads/
+WARNING 2026-05-16 18:21:01,760 log Bad Request: /api/leads/
+WARNING 2026-05-16 18:21:06,159 log Bad Request: /api/leads/
+WARNING 2026-05-18 09:50:58,421 log Unauthorized: /api/auth/users/
+WARNING 2026-05-18 09:51:44,187 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 09:51:44,192 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 09:51:44,198 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 09:51:44,238 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 09:51:44,255 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 09:51:44,267 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 09:51:44,284 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 09:51:44,321 log Unauthorized: /api/auth/me/
+ERROR 2026-05-18 10:09:26,905 log Internal Server Error: /api/auth/register/
+WARNING 2026-05-18 10:11:14,216 log Bad Request: /api/auth/register/
+WARNING 2026-05-18 10:11:15,296 log Bad Request: /api/auth/register/
+WARNING 2026-05-18 10:11:16,035 log Bad Request: /api/auth/register/
+WARNING 2026-05-18 10:28:52,440 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-18 10:28:52,523 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-18 10:29:00,767 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-18 10:29:00,795 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-18 12:21:57,078 log Forbidden: /api/auth/login/
+WARNING 2026-05-18 12:22:36,810 log Unauthorized: /api/auth/login/
+WARNING 2026-05-18 12:25:06,977 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 12:25:06,983 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 12:25:06,987 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 12:25:06,991 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 12:25:07,001 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 12:25:07,006 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 12:25:07,011 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 12:25:07,025 log Unauthorized: /api/auth/me/
+ERROR 2026-05-18 12:25:56,991 log Internal Server Error: /api/auth/register/
+ERROR 2026-05-18 12:33:28,690 log Internal Server Error: /api/auth/register/
+WARNING 2026-05-18 12:36:51,207 log Unauthorized: /api/auth/login/
+WARNING 2026-05-18 12:36:51,610 log Unauthorized: /api/auth/login/
+WARNING 2026-05-18 12:37:02,364 log Unauthorized: /api/auth/login/
+WARNING 2026-05-18 12:37:02,857 log Unauthorized: /api/auth/login/
+WARNING 2026-05-18 12:37:14,147 log Bad Request: /api/auth/register/
+WARNING 2026-05-18 12:37:38,725 log Forbidden: /api/auth/login/
+WARNING 2026-05-18 12:39:34,985 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:39:35,004 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:39:35,019 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:39:35,031 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:39:35,045 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:39:35,050 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:39:35,064 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:39:35,065 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:39:56,586 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:39:56,596 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:39:56,638 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:39:56,642 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:39:56,664 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:39:56,665 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:39:56,678 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:39:56,679 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:40:46,314 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-18 12:40:46,342 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-18 12:40:51,809 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:40:51,818 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:40:51,844 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:40:51,865 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:40:51,883 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:40:51,893 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:40:51,903 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:40:51,906 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:40:55,776 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:40:55,783 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:40:55,809 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:40:55,823 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:40:55,842 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:40:55,847 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 12:40:55,864 log Forbidden: /api/eod/team-reports/
+WARNING 2026-05-18 12:40:55,868 log Forbidden: /api/eod/analytics/
+WARNING 2026-05-18 13:51:18,375 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:51:18,380 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:51:18,383 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:51:18,387 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:51:18,406 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:51:18,411 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:51:18,416 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:51:18,460 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,202 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,205 log Unauthorized: /api/notifications/
+WARNING 2026-05-18 13:53:21,207 log Unauthorized: /api/leads/
+WARNING 2026-05-18 13:53:21,210 log Unauthorized: /api/auth/users/
+WARNING 2026-05-18 13:53:21,216 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,219 log Unauthorized: /api/notifications/
+WARNING 2026-05-18 13:53:21,221 log Unauthorized: /api/leads/
+WARNING 2026-05-18 13:53:21,224 log Unauthorized: /api/auth/users/
+WARNING 2026-05-18 13:53:21,227 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,230 log Unauthorized: /api/leads/
+WARNING 2026-05-18 13:53:21,234 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,236 log Unauthorized: /api/leads/
+WARNING 2026-05-18 13:53:21,239 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,241 log Unauthorized: /api/leads/
+WARNING 2026-05-18 13:53:21,244 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,246 log Unauthorized: /api/leads/
+WARNING 2026-05-18 13:53:21,252 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,254 log Unauthorized: /api/leads/
+WARNING 2026-05-18 13:53:21,604 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,608 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,613 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,620 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,625 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,628 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,643 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:53:21,665 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 13:55:40,582 log Bad Request: /api/leads/
+WARNING 2026-05-18 13:59:22,575 log Bad Request: /api/leads/
+WARNING 2026-05-18 13:59:24,580 log Bad Request: /api/leads/
+WARNING 2026-05-18 13:59:31,911 log Bad Request: /api/leads/
+WARNING 2026-05-18 13:59:33,651 log Bad Request: /api/leads/
+WARNING 2026-05-18 14:21:11,541 log Bad Request: /api/leads/
+WARNING 2026-05-18 14:21:16,092 log Bad Request: /api/leads/
+WARNING 2026-05-18 14:21:22,638 log Bad Request: /api/leads/
+WARNING 2026-05-18 14:21:24,869 log Bad Request: /api/leads/
+WARNING 2026-05-18 14:21:30,725 log Bad Request: /api/leads/
+WARNING 2026-05-18 14:36:32,706 log Not Found: /favicon.ico
+WARNING 2026-05-18 14:40:09,082 log Unauthorized: /api/notifications/
+ERROR 2026-05-18 14:41:18,132 log Internal Server Error: /api/ai/chat/
+ERROR 2026-05-18 14:41:23,163 log Internal Server Error: /api/ai/chat/
+WARNING 2026-05-18 14:53:22,598 log Unauthorized: /api/notifications/
+WARNING 2026-05-18 15:12:17,966 log Unauthorized: /api/notifications/
+WARNING 2026-05-18 15:23:38,164 log Unauthorized: /api/notifications/
+WARNING 2026-05-18 15:27:39,423 log Unauthorized: /api/notifications/
+WARNING 2026-05-18 17:17:05,099 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:17:05,117 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:17:05,131 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:17:05,159 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:17:05,297 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:17:05,338 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:17:05,357 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:17:05,400 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:17:05,414 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:17:05,427 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 17:35:08,965 log Unauthorized: /api/notifications/
+ERROR 2026-05-18 17:42:48,245 log Internal Server Error: /api/leads/export_excel/
+ERROR 2026-05-18 17:43:00,687 log Internal Server Error: /api/leads/export_excel/
+WARNING 2026-05-18 18:11:12,881 log Unauthorized: /api/notifications/
+WARNING 2026-05-18 18:24:21,017 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 18:24:21,053 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 18:24:21,195 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 18:24:21,466 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 18:24:21,472 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 18:24:21,479 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 18:24:21,483 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 18:24:21,489 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 18:24:21,493 log Unauthorized: /api/auth/me/
+WARNING 2026-05-18 18:24:21,509 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:25,961 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:25,965 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:25,969 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:25,981 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:25,989 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:25,994 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:26,008 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:26,040 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:26,049 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:42:26,054 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 09:48:48,213 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-19 09:48:48,265 log Forbidden: /api/dashboard/manager/
+WARNING 2026-05-19 10:25:18,126 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 10:25:18,144 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 10:25:18,260 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 10:25:18,465 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 10:25:18,490 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 10:25:18,503 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 10:25:18,557 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 10:25:18,565 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 10:25:18,587 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 10:25:18,610 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 11:01:42,963 log Unauthorized: /api/notifications/
+ERROR 2026-05-19 11:04:08,611 log Internal Server Error: /api/ai/chat/
+ERROR 2026-05-19 11:04:08,802 log Internal Server Error: /api/ai/chat/
+ERROR 2026-05-19 11:04:14,312 log Internal Server Error: /api/ai/chat/
+WARNING 2026-05-19 11:19:19,590 log Unauthorized: /api/leads/
+WARNING 2026-05-19 12:21:56,847 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 12:21:56,851 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 12:21:56,853 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 12:21:56,862 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 12:21:56,867 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 12:21:56,872 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 12:21:56,880 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 12:21:56,914 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 12:21:56,920 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 12:21:56,927 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 13:37:52,293 log Unauthorized: /api/notifications/
+WARNING 2026-05-19 13:37:52,294 log Unauthorized: /api/leads/
+WARNING 2026-05-19 14:08:22,842 log Unauthorized: /api/auth/users/
+WARNING 2026-05-19 14:08:22,835 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 14:08:22,877 log Unauthorized: /api/contacts/
+WARNING 2026-05-19 14:08:22,884 log Unauthorized: /api/auth/users/
+WARNING 2026-05-19 14:08:22,932 log Unauthorized: /api/contacts/
+WARNING 2026-05-19 14:08:22,933 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 14:08:22,965 log Unauthorized: /api/contacts/
+WARNING 2026-05-19 14:08:22,978 log Unauthorized: /api/auth/me/
+WARNING 2026-05-19 14:08:23,029 log Unauthorized: /api/contacts/
+WARNING 2026-05-19 14:08:23,046 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:47:47,517 log Not Found: /favicon.ico
+WARNING 2026-05-28 10:52:02,474 log Unauthorized: /api/auth/login/
+WARNING 2026-05-28 10:53:09,418 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:53:09,426 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:53:09,432 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:53:09,434 log Unauthorized: /api/auth/token/refresh/
+WARNING 2026-05-28 10:53:09,436 log Unauthorized: /api/auth/token/refresh/
+WARNING 2026-05-28 10:53:09,441 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:53:09,445 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:53:09,452 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:53:09,456 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:53:09,464 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:53:09,474 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 10:53:09,478 log Unauthorized: /api/auth/me/
+WARNING 2026-05-28 11:25:40,337 log Unauthorized: /api/notifications/
+WARNING 2026-05-28 11:35:55,602 log Bad Request: /api/leads/381/
+WARNING 2026-05-28 11:36:11,651 log Not Found: /api/leads/381/
+WARNING 2026-05-28 11:36:13,484 log Not Found: /api/leads/381/
+WARNING 2026-05-28 11:36:24,830 log Not Found: /api/leads/381/
+WARNING 2026-05-28 11:36:26,820 log Not Found: /api/leads/381/
+WARNING 2026-05-28 11:36:28,620 log Not Found: /api/leads/381/
+WARNING 2026-05-28 11:43:28,277 log Not Found: /api/leads/382/
+WARNING 2026-05-28 11:43:29,989 log Not Found: /api/leads/382/
+WARNING 2026-05-28 11:43:33,556 log Not Found: /api/leads/382/
+WARNING 2026-05-28 11:43:36,450 log Not Found: /api/leads/382/
+WARNING 2026-05-28 11:43:40,511 log Not Found: /api/leads/382/
+WARNING 2026-05-28 11:43:43,438 log Not Found: /api/leads/382/
+WARNING 2026-05-28 11:43:45,963 log Not Found: /api/leads/382/
+WARNING 2026-05-28 12:18:05,055 log Not Found: /api/leads/387/
+WARNING 2026-05-28 12:18:10,804 log Not Found: /api/leads/387/
+WARNING 2026-05-28 12:18:14,283 log Not Found: /api/leads/387/
+WARNING 2026-05-28 12:18:17,908 log Not Found: /api/leads/387/
+WARNING 2026-05-28 12:18:21,800 log Not Found: /api/leads/387/
+WARNING 2026-05-28 12:18:25,243 log Not Found: /api/leads/386/
+WARNING 2026-05-28 12:18:42,059 log Not Found: /api/leads/385/
+WARNING 2026-05-28 12:18:45,921 log Not Found: /api/leads/385/
+WARNING 2026-05-28 12:18:47,709 log Not Found: /api/leads/383/
+WARNING 2026-05-28 12:18:49,804 log Not Found: /api/leads/384/
+WARNING 2026-05-28 12:18:52,028 log Not Found: /api/leads/384/
+WARNING 2026-05-28 12:18:53,793 log Not Found: /api/leads/383/
+WARNING 2026-05-28 12:18:56,073 log Not Found: /api/leads/385/
+WARNING 2026-05-28 12:18:58,106 log Not Found: /api/leads/386/
+WARNING 2026-05-28 12:19:01,662 log Not Found: /api/leads/387/
+WARNING 2026-05-28 12:19:06,068 log Not Found: /api/leads/386/
+WARNING 2026-05-28 12:19:07,485 log Not Found: /api/leads/385/
+WARNING 2026-05-28 12:19:10,907 log Not Found: /api/leads/383/
+WARNING 2026-05-28 12:19:12,686 log Not Found: /api/leads/384/
+WARNING 2026-05-28 12:19:19,727 log Not Found: /api/leads/386/
+WARNING 2026-05-28 12:19:21,713 log Not Found: /api/leads/385/
+WARNING 2026-05-28 12:19:24,618 log Not Found: /api/leads/384/
+WARNING 2026-05-28 12:19:26,639 log Not Found: /api/leads/383/
+WARNING 2026-05-28 12:19:29,515 log Not Found: /api/leads/383/
+WARNING 2026-05-28 12:19:37,961 log Not Found: /api/leads/387/
+WARNING 2026-05-28 12:46:02,722 log Not Found: /api/leads/388/
+WARNING 2026-05-28 12:46:05,513 log Not Found: /api/leads/388/
+WARNING 2026-05-28 12:46:09,306 log Not Found: /api/leads/388/
+WARNING 2026-05-28 12:47:14,723 log Not Found: /api/leads/389/
+WARNING 2026-05-28 12:47:16,960 log Not Found: /api/leads/389/
+WARNING 2026-05-28 12:47:19,311 log Not Found: /api/leads/389/
+WARNING 2026-05-28 12:47:21,870 log Not Found: /api/leads/389/
+WARNING 2026-05-28 12:47:23,727 log Not Found: /api/leads/389/
+WARNING 2026-05-28 12:47:27,002 log Not Found: /api/leads/389/
+WARNING 2026-05-28 12:57:28,852 log Unauthorized: /api/leads/
+WARNING 2026-05-28 13:54:00,334 log Unauthorized: /api/notifications/
+WARNING 2026-05-28 13:54:01,199 log Unauthorized: /api/notifications/
+WARNING 2026-05-28 13:54:01,472 log Unauthorized: /api/leads/
+WARNING 2026-05-28 13:54:07,173 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-28 13:54:07,265 log Forbidden: /api/auth/approvals/
+WARNING 2026-05-28 14:47:46,877 log Unauthorized: /api/notifications/
+WARNING 2026-05-28 15:27:26,847 log Unauthorized: /api/leads/
+WARNING 2026-05-28 15:33:47,835 log Unauthorized: /api/notifications/
+WARNING 2026-05-28 15:33:48,856 log Unauthorized: /api/auth/login/
+WARNING 2026-05-28 15:36:26,791 log Not Found: /api/leads/398/
+WARNING 2026-05-28 15:36:29,053 log Not Found: /api/leads/398/
+WARNING 2026-05-28 15:36:31,711 log Not Found: /api/leads/398/
+WARNING 2026-05-28 15:36:33,224 log Not Found: /api/leads/398/
+WARNING 2026-05-28 15:36:35,272 log Not Found: /api/leads/398/
+WARNING 2026-05-28 15:37:42,260 log Not Found: /api/leads/399/
+WARNING 2026-05-28 15:37:46,687 log Not Found: /api/leads/399/
+WARNING 2026-05-28 15:37:49,313 log Not Found: /api/leads/399/
+WARNING 2026-05-28 15:37:51,950 log Not Found: /api/leads/399/
+WARNING 2026-05-28 15:37:55,387 log Not Found: /api/leads/399/
+WARNING 2026-05-28 15:37:56,955 log Not Found: /api/leads/399/
+ERROR 2026-05-28 15:52:48,143 log Internal Server Error: /api/ai/chat/
+ERROR 2026-05-28 15:52:50,861 log Internal Server Error: /api/ai/chat/
+WARNING 2026-05-28 16:05:57,568 log Unauthorized: /api/
+WARNING 2026-05-28 16:09:16,316 log Not Found: /favicon.ico
+WARNING 2026-05-28 16:21:46,858 log Unauthorized: /api/notifications/
+WARNING 2026-05-28 16:21:46,866 log Unauthorized: /api/notifications/
+WARNING 2026-05-28 16:51:46,848 log Unauthorized: /api/notifications/
+WARNING 2026-05-28 16:51:46,853 log Unauthorized: /api/notifications/
+WARNING 2026-05-28 17:21:46,876 log Unauthorized: /api/notifications/
+WARNING 2026-05-30 11:53:48,730 log Not Found: /favicon.ico
+WARNING 2026-05-30 11:57:03,495 log Unauthorized: /api/auth/
+WARNING 2026-05-30 11:58:13,206 log Unauthorized: /api/auth/
+WARNING 2026-05-30 12:30:33,505 log Bad Request: /api/leads/415/
+WARNING 2026-05-30 12:43:39,920 log Bad Request: /api/leads/
+WARNING 2026-05-30 13:30:44,491 log Unauthorized: /api/notifications/
+WARNING 2026-05-30 17:10:22,716 log Unauthorized: /api/auth/me/
+WARNING 2026-05-30 17:10:22,748 log Unauthorized: /api/auth/me/
+WARNING 2026-05-30 17:10:26,870 log Unauthorized: /api/auth/
+WARNING 2026-06-02 11:32:02,326 log Not Found: /favicon.ico
+WARNING 2026-06-02 11:33:49,807 log Not Found: /favicon.ico
+WARNING 2026-06-02 11:36:52,186 log Bad Request: /api/auth/register/
+WARNING 2026-06-02 11:39:49,726 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 11:42:03,355 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 11:42:08,236 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 11:42:10,911 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 11:43:04,712 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:43:06,200 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:43:07,026 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:43:07,576 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:43:07,781 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:48:24,908 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:48:39,346 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:48:56,743 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:48:57,798 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:52:44,806 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:52:46,735 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 11:53:13,753 log Bad Request: /api/reports/generate/
+WARNING 2026-06-02 12:25:20,983 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 12:25:45,573 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:25:52,473 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:26:06,625 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:26:18,115 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:26:26,518 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 12:26:40,711 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 12:28:48,147 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:28:49,573 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:35:21,518 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:46:44,952 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:46:46,201 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:46:57,968 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 12:46:58,553 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 13:02:32,514 log Unauthorized: /api/leads/
+WARNING 2026-06-02 13:04:09,778 log Unauthorized: /api/leads/
+WARNING 2026-06-02 14:02:50,496 log Unauthorized: /api/leads/
+WARNING 2026-06-02 14:02:50,807 log Unauthorized: /api/notifications/
+WARNING 2026-06-02 14:18:09,503 log Unauthorized: /api/leads/
+WARNING 2026-06-02 14:18:09,505 log Unauthorized: /api/notifications/
+WARNING 2026-06-02 14:42:43,446 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 14:44:26,849 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 14:44:28,734 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 14:44:30,232 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 14:44:32,167 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 14:44:33,485 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 14:44:35,245 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:14:55,184 log Unauthorized: /api/notifications/
+WARNING 2026-06-02 15:45:23,106 log Unauthorized: /api/notifications/
+WARNING 2026-06-02 15:50:47,934 log Unauthorized: /api/auth/me/
+WARNING 2026-06-02 15:50:47,952 log Unauthorized: /api/auth/me/
+WARNING 2026-06-02 15:50:55,747 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:50:58,198 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:50:58,518 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:00,036 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:00,421 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:00,937 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:01,194 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:02,665 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:03,160 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:03,590 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:03,975 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:05,486 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:07,084 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 15:51:08,221 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:07:52,690 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:07:54,189 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:07:55,529 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:07:55,743 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:07:57,807 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:07:57,961 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:08:02,634 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:08:03,948 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:16:39,786 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:16:42,320 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:16:43,433 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:16:44,908 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:16:45,937 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:18:56,079 log Unauthorized: /api/notifications/
+WARNING 2026-06-02 16:22:19,344 log Unauthorized: /api/auth/me/
+WARNING 2026-06-02 16:22:47,698 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:22:50,670 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:22:52,845 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:22:53,244 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:22:53,482 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:22:57,170 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:23:00,578 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:23:05,443 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:23:07,875 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:23:36,877 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:23:45,438 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:23:48,850 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:24:44,522 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 16:24:47,678 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 17:08:09,974 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 17:08:14,142 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 17:09:25,082 log Bad Request: /api/auth/register/
+WARNING 2026-06-02 17:09:30,347 log Forbidden: /api/auth/login/
+WARNING 2026-06-02 17:12:12,631 log Unauthorized: /api/auth/login/
+WARNING 2026-06-02 17:19:12,592 log Unauthorized: /api/notifications/
+WARNING 2026-06-02 17:24:04,548 log Bad Request: /api/auth/login/
+WARNING 2026-06-02 17:24:04,961 log Unauthorized: /api/leads/
+WARNING 2026-06-02 17:24:05,891 log Not Found: /api/ai//sales-prediction/
+WARNING 2026-06-02 17:32:47,337 log Bad Request: /api/auth/login/
+WARNING 2026-06-02 17:32:47,376 log Unauthorized: /api/dashboard/manager/
+WARNING 2026-06-02 17:49:48,923 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 09:25:40,431 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 09:25:40,436 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 09:25:40,442 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 09:25:40,455 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 09:25:40,459 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 09:25:40,465 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 09:25:40,472 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 09:25:40,871 log Unauthorized: /api/auth/me/
+ERROR 2026-06-03 09:41:02,305 log Internal Server Error: /api/ai/chat/
+WARNING 2026-06-03 09:41:36,982 log Unauthorized: /api/auth/login/
+WARNING 2026-06-03 09:41:37,582 log Unauthorized: /api/auth/login/
+WARNING 2026-06-03 09:49:05,067 log Bad Request: /api/contacts/47/
+WARNING 2026-06-03 09:50:10,030 log Bad Request: /api/eod/create/
+WARNING 2026-06-03 10:13:48,196 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 10:32:16,983 log Bad Request: /api/tasks/118/
+WARNING 2026-06-03 10:32:18,184 log Bad Request: /api/tasks/118/
+WARNING 2026-06-03 10:36:39,696 log Bad Request: /api/tasks/118/
+WARNING 2026-06-03 10:36:40,565 log Bad Request: /api/tasks/118/
+WARNING 2026-06-03 10:44:29,241 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 10:55:59,979 log Bad Request: /api/eod/create/
+WARNING 2026-06-03 10:56:28,811 log Bad Request: /api/contacts/49/
+WARNING 2026-06-03 11:15:47,234 log Bad Request: /api/reports/generate/
+WARNING 2026-06-03 11:15:52,446 log Bad Request: /api/reports/generate/
+WARNING 2026-06-03 11:15:57,858 log Bad Request: /api/reports/generate/
+WARNING 2026-06-03 11:16:00,055 log Bad Request: /api/reports/generate/
+WARNING 2026-06-03 11:27:28,019 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 11:31:09,220 log Bad Request: /api/contacts/48/
+WARNING 2026-06-03 11:44:06,160 log Bad Request: /api/contacts/47/
+WARNING 2026-06-03 12:00:41,995 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 12:30:45,425 log Unauthorized: /api/leads/
+WARNING 2026-06-03 13:57:24,892 log Unauthorized: /api/leads/
+WARNING 2026-06-03 13:57:24,901 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 14:27:55,473 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 15:12:08,178 log Bad Request: /api/contacts/47/
+WARNING 2026-06-03 15:40:16,979 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 16:10:20,277 log Unauthorized: /api/leads/
+WARNING 2026-06-03 16:40:39,275 log Unauthorized: /api/leads/
+WARNING 2026-06-03 16:40:39,287 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 17:10:39,038 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,049 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,066 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,101 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,112 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,132 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,152 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,174 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,194 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,212 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,235 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,260 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,297 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,313 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:10:39,325 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,012 log Unauthorized: /api/leads/
+WARNING 2026-06-03 17:40:39,035 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 17:40:39,058 log Unauthorized: /api/tasks/
+WARNING 2026-06-03 17:40:39,068 log Unauthorized: /api/activities/
+WARNING 2026-06-03 17:40:39,084 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:39,124 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,127 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 17:40:39,137 log Unauthorized: /api/tasks/
+WARNING 2026-06-03 17:40:39,142 log Unauthorized: /api/auth/users/
+WARNING 2026-06-03 17:40:39,150 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,158 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:39,173 log Unauthorized: /api/tasks/
+WARNING 2026-06-03 17:40:39,179 log Unauthorized: /api/auth/users/
+WARNING 2026-06-03 17:40:39,188 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:39,195 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,204 log Unauthorized: /api/tasks/
+WARNING 2026-06-03 17:40:39,208 log Unauthorized: /api/auth/users/
+WARNING 2026-06-03 17:40:39,221 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:39,225 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,236 log Unauthorized: /api/notifications/
+WARNING 2026-06-03 17:40:39,246 log Unauthorized: /api/tasks/
+WARNING 2026-06-03 17:40:39,351 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:39,364 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,555 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,559 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:39,633 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,659 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:39,698 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,742 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:39,770 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:39,909 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:40,007 log Unauthorized: /api/auth/me/
+WARNING 2026-06-03 17:40:40,029 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:40,079 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:40,108 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:40,139 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:40,178 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:40,197 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:40,236 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-03 17:40:40,255 log Unauthorized: /api/dashboard/sales/
+WARNING 2026-06-04 09:47:46,365 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 09:47:46,379 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 09:47:46,392 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 09:47:46,405 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 09:47:46,414 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 09:47:46,426 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 09:47:46,438 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 09:47:47,364 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 09:52:27,572 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 09:55:16,627 log Bad Request: /api/contacts/48/
+WARNING 2026-06-04 10:33:39,720 log Unauthorized: /api/notifications/
+WARNING 2026-06-04 10:33:41,399 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 10:33:41,405 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 10:33:41,412 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 10:33:41,418 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 10:33:41,423 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 10:33:41,429 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 10:33:41,435 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 10:33:41,440 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 10:36:31,910 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 10:36:37,209 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 10:36:44,985 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 10:36:46,940 log Bad Request: /api/contacts/48/
+WARNING 2026-06-04 10:43:50,272 log Bad Request: /api/contacts/48/
+WARNING 2026-06-04 10:43:51,564 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 10:48:45,741 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 10:48:47,949 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 10:48:50,275 log Bad Request: /api/contacts/48/
+WARNING 2026-06-04 10:48:52,088 log Bad Request: /api/contacts/49/
+WARNING 2026-06-04 10:53:00,344 log Bad Request: /api/auth/register/
+WARNING 2026-06-04 10:54:10,785 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 11:03:23,694 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 11:03:26,245 log Bad Request: /api/contacts/48/
+WARNING 2026-06-04 11:04:41,011 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 11:05:02,158 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 11:05:14,723 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 11:05:23,796 log Bad Request: /api/contacts/48/
+WARNING 2026-06-04 11:05:31,213 log Bad Request: /api/contacts/47/
+WARNING 2026-06-04 11:24:27,106 log Unauthorized: /api/notifications/
+WARNING 2026-06-04 11:55:27,141 log Unauthorized: /api/notifications/
+WARNING 2026-06-04 12:47:19,890 log Unauthorized: /api/notifications/
+WARNING 2026-06-04 12:51:10,235 log Unauthorized: /api/eod/my-reports/
+WARNING 2026-06-04 12:51:10,245 log Unauthorized: /api/eod/team-reports/
+WARNING 2026-06-04 12:51:10,256 log Unauthorized: /api/eod/all-reports/
+WARNING 2026-06-04 12:51:10,281 log Unauthorized: /api/eod/analytics/
+WARNING 2026-06-04 12:51:43,552 log Unauthorized: /api/auth/login/
+WARNING 2026-06-04 12:52:06,775 log Unauthorized: /api/auth/login/
+WARNING 2026-06-04 12:52:08,297 log Unauthorized: /api/auth/login/
+WARNING 2026-06-04 12:52:09,890 log Unauthorized: /api/auth/login/
+WARNING 2026-06-04 12:52:11,621 log Unauthorized: /api/auth/login/
+WARNING 2026-06-04 12:52:13,290 log Unauthorized: /api/auth/login/
+WARNING 2026-06-04 12:52:15,981 log Unauthorized: /api/auth/login/
+WARNING 2026-06-04 12:52:18,237 log Unauthorized: /api/auth/login/
+WARNING 2026-06-04 14:01:46,544 log Unauthorized: /api/notifications/
+WARNING 2026-06-04 14:31:53,293 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 14:31:53,296 log Unauthorized: /api/eod/team-reports/
+WARNING 2026-06-04 14:31:53,299 log Unauthorized: /api/eod/analytics/
+WARNING 2026-06-04 14:31:53,313 log Unauthorized: /api/auth/me/
+WARNING 2026-06-04 14:31:53,316 log Unauthorized: /api/eod/analytics/
+WARNING 2026-06-04 14:31:53,319 log Unauthorized: /api/eod/team-reports/

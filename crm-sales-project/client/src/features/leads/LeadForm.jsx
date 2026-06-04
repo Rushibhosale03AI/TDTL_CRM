@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
-import { X } from "lucide-react"
+import { X, AlertCircle } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { Input } from "../../components/ui/Input"
-import { useStore } from "../../store/state"
+import { useLeads } from "../../hooks/useLeads"
 import { useAuth } from "../../hooks/useAuth"
 
 const LeadForm = ({ isOpen, onClose, editingLead = null }) => {
-  const { addLead, updateLead } = useStore()
+  const { leads, createLead, updateLead, error } = useLeads({ skipFetchOnMount: true })
   const { user } = useAuth()
   const [formData, setFormData] = useState({
     name: "",
@@ -15,7 +15,12 @@ const LeadForm = ({ isOpen, onClose, editingLead = null }) => {
     phone: "",
     status: "New",
     value: "",
+    designation: "",
+    location: "",
+    linkedin_url: "",
   })
+
+  const [duplicateWarning, setDuplicateWarning] = useState("")
 
   useEffect(() => {
     if (editingLead) {
@@ -28,23 +33,67 @@ const LeadForm = ({ isOpen, onClose, editingLead = null }) => {
         phone: "",
         status: "New",
         value: "",
+        designation: "",
+        location: "",
+        linkedin_url: "",
       })
     }
   }, [editingLead, isOpen])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (editingLead) {
-      updateLead(editingLead.id, formData)
-    } else {
-      addLead({
-        ...formData,
-        id: Date.now(),
-        date: new Date().toISOString().split("T")[0],
-        assignedTo: user?.id,
-      })
+  useEffect(() => {
+    if (!isOpen) {
+      setDuplicateWarning("")
+      return
     }
-    onClose()
+    if (!formData.email && (!formData.name || !formData.phone)) {
+      setDuplicateWarning("")
+      return
+    }
+
+    const isDuplicate = Array.isArray(leads) && leads.some(lead => {
+      if (editingLead && lead.id === editingLead.id) return false
+      
+      const emailMatch = formData.email && lead.email && lead.email.toLowerCase() === formData.email.toLowerCase()
+      const namePhoneMatch = formData.name && formData.phone && lead.name && lead.phone && 
+                             lead.name.toLowerCase() === formData.name.toLowerCase() && 
+                             lead.phone === formData.phone
+      return emailMatch || namePhoneMatch
+    })
+
+    if (isDuplicate) {
+      setDuplicateWarning("Warning: A lead with this email or name/phone combination already exists!")
+    } else {
+      setDuplicateWarning("")
+    }
+  }, [formData.email, formData.name, formData.phone, leads, editingLead, isOpen])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    // Auto-format LinkedIn URL if scheme is missing
+    let formattedLinkedinUrl = formData.linkedin_url ? formData.linkedin_url.trim() : ""
+    if (formattedLinkedinUrl && !/^https?:\/\//i.test(formattedLinkedinUrl)) {
+      formattedLinkedinUrl = `https://${formattedLinkedinUrl}`
+    }
+
+    // Clean up data before sending
+    const submissionData = {
+      ...formData,
+      linkedin_url: formattedLinkedinUrl,
+      value: formData.value === "" ? 0 : Number(formData.value),
+      assignedTo: user?.id,
+    }
+
+    let result
+    if (editingLead) {
+      result = await updateLead(editingLead.id, submissionData)
+    } else {
+      result = await createLead(submissionData)
+    }
+    
+    if (result) {
+      onClose()
+    }
   }
 
   if (!isOpen) return null
@@ -62,6 +111,23 @@ const LeadForm = ({ isOpen, onClose, editingLead = null }) => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          {error && (
+            <div className="bg-red-500/10 border border-red-500/20 text-destructive text-xs font-bold p-3 rounded-lg flex items-start gap-2 animate-in fade-in duration-300">
+              <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
+              <div className="flex flex-col gap-0.5">
+                <span className="font-extrabold uppercase tracking-wider text-[10px]">Validation Error</span>
+                <span>{error}</span>
+              </div>
+            </div>
+          )}
+
+          {duplicateWarning && (
+            <div className="bg-red-500/10 border border-red-500/20 text-destructive text-xs font-bold p-3 rounded-lg flex items-center gap-2 animate-in fade-in duration-300">
+              <span className="h-2 w-2 bg-destructive rounded-full shrink-0 animate-ping" />
+              <span>{duplicateWarning}</span>
+            </div>
+          )}
+
           <div className="space-y-2">
             <label className="text-sm font-medium">Full Name</label>
             <Input
@@ -123,7 +189,7 @@ const LeadForm = ({ isOpen, onClose, editingLead = null }) => {
               </select>
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium">Est. Value ($)</label>
+              <label className="text-sm font-medium">Est. Value (₹)</label>
               <Input
                 type="number"
                 placeholder="5000"
@@ -131,6 +197,34 @@ const LeadForm = ({ isOpen, onClose, editingLead = null }) => {
                 onChange={(e) => setFormData({ ...formData, value: e.target.value })}
               />
             </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Designation</label>
+              <Input
+                placeholder="Manager / Director"
+                value={formData.designation}
+                onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Location</label>
+              <Input
+                placeholder="Mumbai, MH"
+                value={formData.location}
+                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium">LinkedIn Profile</label>
+            <Input
+              placeholder="https://linkedin.com/in/..."
+              value={formData.linkedin_url}
+              onChange={(e) => setFormData({ ...formData, linkedin_url: e.target.value })}
+            />
           </div>
 
           <div className="pt-4 flex gap-3">

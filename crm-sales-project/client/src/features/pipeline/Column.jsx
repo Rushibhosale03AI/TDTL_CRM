@@ -23,7 +23,7 @@ const Column = ({ id, title, leads }) => {
           </span>
         </div>
         <div className="text-xs font-semibold text-primary">
-          ${totalValue.toLocaleString()}
+          ₹{totalValue.toLocaleString()}
         </div>
       </div>
 

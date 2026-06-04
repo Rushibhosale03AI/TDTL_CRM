@@ -9,7 +9,8 @@ const DashboardWrapper = () => {
 
   if (!user) return null
 
-  switch (user.role) {
+  const userRole = user.role?.toLowerCase()
+  switch (userRole) {
     case 'admin':
       return <AdminDashboard />
     case 'manager':

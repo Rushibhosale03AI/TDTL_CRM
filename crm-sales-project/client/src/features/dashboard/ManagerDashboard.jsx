@@ -1,39 +1,32 @@
 import React from "react"
 import { Users, Target, CheckCircle2 } from "lucide-react"
-import { useStore } from "../../store/state"
+import { useDashboard } from "../../hooks/useDashboard"
 import { useAuth } from "../../hooks/useAuth"
+import QuickExcelActions from "./QuickExcelActions"
 
 const ManagerDashboard = () => {
-  const { monthlyTarget, mockUsers } = useStore()
+  const { data, loading } = useDashboard()
   const { user } = useAuth()
   
-  // Find team members assigned to this specific manager
-  let teamMembers = mockUsers
-    .filter(u => u.role === 'sales' && u.managerId === user?.id)
-    .map(u => ({
-      id: u.id,
-      name: u.name,
-      role: "Sales Representative",
-      dealsClosed: Math.floor(Math.random() * 20), // mock random data
-      revenue: `$${(Math.floor(Math.random() * 50) * 1000).toLocaleString()}`,
-      targetProgress: Math.floor(Math.random() * 60) + 40 // random between 40-100%
-    }))
-
-  // If no one is assigned yet, maybe show some default mocks or empty state. We'll add some dummy fallback if empty for UI presentation.
-  if (teamMembers.length === 0) {
-    teamMembers = [
-      { id: 101, name: "No reps registered under your team yet", role: "-", dealsClosed: 0, revenue: "$0", targetProgress: 0 }
-    ]
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="flex flex-col items-center gap-4">
+          <div className="h-12 w-12 rounded-full border-4 border-primary border-t-transparent animate-spin" />
+          <p className="text-sm font-black uppercase tracking-widest text-muted-foreground animate-pulse">Syncing Team Data...</p>
+        </div>
+      </div>
+    )
   }
 
-  const totalRevenue = teamMembers.reduce((acc, curr) => {
-    const revNum = parseInt(curr.revenue.replace(/[^0-9.-]+/g,"")) || 0;
-    return acc + revNum;
-  }, 0)
-  
-  const avgProgress = teamMembers.length > 0 && teamMembers[0].id !== 101 
-    ? Math.floor(teamMembers.reduce((acc, curr) => acc + curr.targetProgress, 0) / teamMembers.length)
-    : 0
+  if (!data) return (
+    <div className="p-8 text-center rounded-2xl border border-dashed bg-muted/20">
+      <p className="text-muted-foreground font-medium">Unable to load dashboard metrics. Please try again later.</p>
+    </div>
+  )
+
+  const { teamTarget, teamAttainment, activeReps, teamPerformance } = data
+  const teamMembers = teamPerformance || []
 
   return (
     <div className="space-y-8 animate-in fade-in duration-700">
@@ -46,6 +39,9 @@ const ManagerDashboard = () => {
         </div>
       </div>
 
+      {/* Quick Excel Actions Hub */}
+      <QuickExcelActions />
+
       {/* KPI Cards */}
       <div className="grid gap-4 md:grid-cols-3">
         <div className="rounded-xl border bg-card p-6 shadow-sm">
@@ -53,17 +49,17 @@ const ManagerDashboard = () => {
             <h3 className="tracking-tight text-sm font-medium">Team Target</h3>
             <Target className="h-4 w-4 text-muted-foreground" />
           </div>
-          <div className="text-2xl font-bold">${(monthlyTarget * Math.max(1, teamMembers.filter(m => m.id !== 101).length)).toLocaleString()}</div>
+          <div className="text-2xl font-bold">{teamTarget}</div>
           <p className="text-xs text-muted-foreground mt-1">Monthly combined goal</p>
         </div>
         <div className="rounded-xl border bg-card p-6 shadow-sm">
           <div className="flex flex-row items-center justify-between space-y-0 pb-2">
             <h3 className="tracking-tight text-sm font-medium">Team Attainment</h3>
-            <CheckCircle2 className={`h-4 w-4 ${avgProgress >= 100 ? 'text-green-500' : 'text-primary'}`} />
+            <CheckCircle2 className={`h-4 w-4 ${teamAttainment >= 100 ? 'text-green-500' : 'text-primary'}`} />
           </div>
-          <div className="text-2xl font-bold">{avgProgress}%</div>
+          <div className="text-2xl font-bold">{teamAttainment}%</div>
           <div className="mt-2 h-2 w-full rounded-full bg-secondary">
-            <div className={`h-full rounded-full ${avgProgress >= 100 ? 'bg-green-500' : 'bg-primary'}`} style={{ width: `${Math.min(avgProgress, 100)}%` }}></div>
+            <div className={`h-full rounded-full ${teamAttainment >= 100 ? 'bg-green-500' : 'bg-primary'}`} style={{ width: `${Math.min(teamAttainment, 100)}%` }}></div>
           </div>
         </div>
         <div className="rounded-xl border bg-card p-6 shadow-sm">
@@ -71,7 +67,7 @@ const ManagerDashboard = () => {
             <h3 className="tracking-tight text-sm font-medium">Active Reps</h3>
             <Users className="h-4 w-4 text-muted-foreground" />
           </div>
-          <div className="text-2xl font-bold">{teamMembers.filter(m => m.id !== 101).length}</div>
+          <div className="text-2xl font-bold">{activeReps}</div>
         </div>
       </div>
 

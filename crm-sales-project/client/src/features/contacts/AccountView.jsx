@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { 
   ArrowLeft, 
@@ -9,23 +9,101 @@ import {
   MapPin, 
   Users, 
   CreditCard,
-  ExternalLink 
+  ExternalLink,
+  X,
+  Check
 } from "lucide-react"
 import { Button } from "../../components/ui/Button"
 import { Badge } from "../../components/ui/Badge"
-import { useStore } from "../../store/state"
+import { useContacts } from "../../hooks/useContacts"
+import { useLeads } from "../../hooks/useLeads"
 
 const AccountView = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { contacts, leads } = useStore()
+  const { contacts, updateContact } = useContacts()
+  const { leads, createLead } = useLeads()
+  
+  // Modal states
+  const [showEmailModal, setShowEmailModal] = useState(false)
+  const [showEditModal, setShowEditModal] = useState(false)
+  const [showDealModal, setShowDealModal] = useState(false)
+  
+  // Form states
+  const [emailTeam, setEmailTeam] = useState({ subject: '', message: '', recipients: '' })
+  const [editForm, setEditForm] = useState({})
+  const [dealForm, setDealForm] = useState({
+    name: '',
+    amount: '',
+    stage: 'PROSPECTING',
+    probability: 50,
+    closeDate: ''
+  })
+  const [successMessage, setSuccessMessage] = useState('')
 
   const contact = contacts.find((c) => c.id === parseInt(id))
   
   // Find linked deals (leads) that belong to the same company
   const linkedDeals = leads.filter(
-    (lead) => lead.company.toLowerCase() === contact?.company.toLowerCase()
+    (lead) => lead.company?.toLowerCase() === contact?.company?.toLowerCase()
   )
+  
+  // Initialize edit form with contact data
+  React.useEffect(() => {
+    if (contact && !Object.keys(editForm).length) {
+      setEditForm({
+        name: contact.name || '',
+        email: contact.email || '',
+        phone: contact.phone || '',
+        company: contact.company || '',
+        designation: contact.designation || '',
+        industry: contact.industry || '',
+        location: contact.location || '',
+        website: contact.website || '',
+        size: contact.size || ''
+      })
+    }
+  }, [contact, editForm])
+
+  const handleEmailTeam = () => {
+    console.log('Email Team:', emailTeam)
+    setSuccessMessage('Email sent successfully!')
+    setTimeout(() => {
+      setShowEmailModal(false)
+      setSuccessMessage('')
+      setEmailTeam({ subject: '', message: '', recipients: '' })
+    }, 1500)
+  }
+
+  const handleEditAccount = async () => {
+    console.log('Updated Account:', editForm)
+    setSuccessMessage('Account updated successfully!')
+    setTimeout(() => {
+      setShowEditModal(false)
+      setSuccessMessage('')
+    }, 1500)
+  }
+
+  const handleCreateDeal = async () => {
+    const newDeal = {
+      id: Math.max(...leads.map(l => l.id), 0) + 1,
+      name: dealForm.name,
+      company: contact.company,
+      value: parseFloat(dealForm.amount),
+      stage: dealForm.stage,
+      probability: dealForm.probability,
+      close_date: dealForm.closeDate,
+      owner: 1,
+      status: 'Yet to approach'
+    }
+    console.log('Created Deal:', newDeal)
+    setSuccessMessage('Deal created successfully!')
+    setTimeout(() => {
+      setShowDealModal(false)
+      setSuccessMessage('')
+      setDealForm({ name: '', amount: '', stage: 'PROSPECTING', probability: 50, closeDate: '' })
+    }, 1500)
+  }
 
   if (!contact) {
     return <div className="p-8 text-center text-muted-foreground">Contact not found.</div>
@@ -52,11 +130,18 @@ const AccountView = () => {
           <p className="text-muted-foreground mt-1">Primary Contact: {contact.name}</p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" className="flex items-center gap-2">
+          <Button 
+            variant="outline" 
+            className="flex items-center gap-2"
+            onClick={() => setShowEmailModal(true)}
+          >
             <Mail className="h-4 w-4" />
             Email Team
           </Button>
-          <Button className="flex items-center gap-2">
+          <Button 
+            className="flex items-center gap-2"
+            onClick={() => setShowEditModal(true)}
+          >
             Edit Account
           </Button>
         </div>
@@ -99,7 +184,7 @@ const AccountView = () => {
                 <CreditCard className="h-4 w-4 text-muted-foreground" />
                 Associated Opportunities
               </h3>
-              <Button variant="ghost" size="sm" className="text-primary text-xs font-bold">Create New Deal</Button>
+              <Button variant="ghost" size="sm" className="text-primary text-xs font-bold" onClick={() => setShowDealModal(true)}>Create New Deal</Button>
             </div>
             <div className="divide-y">
               {linkedDeals.length === 0 ? (
@@ -145,6 +230,186 @@ const AccountView = () => {
           </div>
         </div>
       </div>
+
+      {/* Email Team Modal */}
+      {showEmailModal && (
+        <Modal title="Email Team" onClose={() => setShowEmailModal(false)}>
+          <div className="space-y-4">
+            <input
+              type="text"
+              placeholder="Recipients (comma-separated emails)"
+              value={emailTeam.recipients}
+              onChange={(e) => setEmailTeam({ ...emailTeam, recipients: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="text"
+              placeholder="Subject"
+              value={emailTeam.subject}
+              onChange={(e) => setEmailTeam({ ...emailTeam, subject: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <textarea
+              placeholder="Message"
+              value={emailTeam.message}
+              onChange={(e) => setEmailTeam({ ...emailTeam, message: e.target.value })}
+              rows={5}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <div className="flex justify-end gap-2 pt-4">
+              <Button variant="outline" onClick={() => setShowEmailModal(false)}>Cancel</Button>
+              <Button onClick={handleEmailTeam} className="flex items-center gap-2">
+                <Mail className="h-4 w-4" />
+                Send Email
+              </Button>
+            </div>
+          </div>
+        </Modal>
+      )}
+
+      {/* Edit Account Modal */}
+      {showEditModal && (
+        <Modal title="Edit Account" onClose={() => setShowEditModal(false)}>
+          <div className="space-y-4 max-h-96 overflow-y-auto">
+            <input
+              type="text"
+              placeholder="Contact Name"
+              value={editForm.name}
+              onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={editForm.email}
+              onChange={(e) => setEditForm({ ...editForm, email: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="text"
+              placeholder="Phone"
+              value={editForm.phone}
+              onChange={(e) => setEditForm({ ...editForm, phone: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="text"
+              placeholder="Company"
+              value={editForm.company}
+              onChange={(e) => setEditForm({ ...editForm, company: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="text"
+              placeholder="Designation"
+              value={editForm.designation}
+              onChange={(e) => setEditForm({ ...editForm, designation: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="text"
+              placeholder="Industry"
+              value={editForm.industry}
+              onChange={(e) => setEditForm({ ...editForm, industry: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="text"
+              placeholder="Location"
+              value={editForm.location}
+              onChange={(e) => setEditForm({ ...editForm, location: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="text"
+              placeholder="Website"
+              value={editForm.website}
+              onChange={(e) => setEditForm({ ...editForm, website: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="text"
+              placeholder="Account Size"
+              value={editForm.size}
+              onChange={(e) => setEditForm({ ...editForm, size: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <div className="flex justify-end gap-2 pt-4">
+              <Button variant="outline" onClick={() => setShowEditModal(false)}>Cancel</Button>
+              <Button onClick={handleEditAccount} className="flex items-center gap-2">
+                <Check className="h-4 w-4" />
+                Save Changes
+              </Button>
+            </div>
+          </div>
+        </Modal>
+      )}
+
+      {/* Create Deal Modal */}
+      {showDealModal && (
+        <Modal title="Create New Deal" onClose={() => setShowDealModal(false)}>
+          <div className="space-y-4">
+            <input
+              type="text"
+              placeholder="Deal Name"
+              value={dealForm.name}
+              onChange={(e) => setDealForm({ ...dealForm, name: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <input
+              type="number"
+              placeholder="Deal Amount"
+              value={dealForm.amount}
+              onChange={(e) => setDealForm({ ...dealForm, amount: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <select
+              value={dealForm.stage}
+              onChange={(e) => setDealForm({ ...dealForm, stage: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            >
+              <option value="PROSPECTING">Prospecting</option>
+              <option value="PROPOSAL">Proposal</option>
+              <option value="NEGOTIATION">Negotiation</option>
+              <option value="CLOSED_WON">Closed Won</option>
+              <option value="CLOSED_LOST">Closed Lost</option>
+            </select>
+            <div>
+              <label className="text-sm font-medium mb-2 block">Probability (%)</label>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={dealForm.probability}
+                onChange={(e) => setDealForm({ ...dealForm, probability: parseInt(e.target.value) })}
+                className="w-full"
+              />
+              <div className="text-sm text-muted-foreground mt-1">{dealForm.probability}%</div>
+            </div>
+            <input
+              type="date"
+              value={dealForm.closeDate}
+              onChange={(e) => setDealForm({ ...dealForm, closeDate: e.target.value })}
+              className="w-full px-3 py-2 border rounded-lg bg-background"
+            />
+            <div className="flex justify-end gap-2 pt-4">
+              <Button variant="outline" onClick={() => setShowDealModal(false)}>Cancel</Button>
+              <Button onClick={handleCreateDeal} className="flex items-center gap-2">
+                <CreditCard className="h-4 w-4" />
+                Create Deal
+              </Button>
+            </div>
+          </div>
+        </Modal>
+      )}
+
+      {/* Success Message */}
+      {successMessage && (
+        <div className="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
+          <Check className="h-5 w-5" />
+          {successMessage}
+        </div>
+      )}
     </div>
   )
 }
@@ -193,6 +458,24 @@ const CalendarIcon = (props) => (
     <rect width="18" height="18" x="3" y="4" rx="2" />
     <path d="M3 10h18" />
   </svg>
+)
+
+// Modal Component
+const Modal = ({ title, onClose, children }) => (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 animate-in fade-in">
+    <div className="bg-card rounded-xl border shadow-lg w-full max-w-md animate-in zoom-in-95 duration-200">
+      <div className="flex items-center justify-between border-b p-6">
+        <h2 className="text-xl font-bold">{title}</h2>
+        <button
+          onClick={onClose}
+          className="rounded-lg p-1 hover:bg-muted transition-colors"
+        >
+          <X className="h-5 w-5" />
+        </button>
+      </div>
+      <div className="p-6">{children}</div>
+    </div>
+  </div>
 )
 
 export default AccountView

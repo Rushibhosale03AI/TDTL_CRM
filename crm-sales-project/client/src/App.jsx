@@ -7,9 +7,18 @@ import LeadList from "./features/leads/LeadList"
 import PipelineBoard from "./features/pipeline/PipelineBoard"
 import ContactList from "./features/contacts/ContactList"
 import AccountView from "./features/contacts/AccountView"
+import Approvals from "./features/approvals/Approvals"
 import ProtectedRoute from "./components/auth/ProtectedRoute"
 import Login from "./features/auth/Login"
 import Register from "./features/auth/Register"
+import TeamList from "./features/team/TeamList"
+import TeamPerformance from "./features/team/TeamPerformance"
+import ManagersList from "./features/team/ManagersList"
+import EveningReports from "./features/dashboard/EveningReports"
+import AICopilot from "./features/dashboard/AICopilot"
+import GlobalReports from "./features/dashboard/GlobalReports"
+import ProfileSettings from "./features/dashboard/ProfileSettings"
+import FloatingAICopilot from "./features/dashboard/FloatingAICopilot"
 
 const App = () => {
   const location = useLocation()
@@ -34,16 +43,19 @@ const App = () => {
             <Route element={<ProtectedRoute />}>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<DashboardWrapper />} />
+              <Route path="/approvals" element={<Approvals />} />
               <Route path="/leads" element={<LeadList />} />
               <Route path="/pipeline" element={<PipelineBoard />} />
               <Route path="/contacts" element={<ContactList />} />
               <Route path="/contacts/:id" element={<AccountView />} />
-              {/* Dummy routes for new sidebar items to prevent 404s */}
-              <Route path="/managers" element={<div className="p-4 border rounded-lg bg-card mt-4"><h2 className="text-xl font-bold">Managers List</h2><p className="text-muted-foreground mt-2">Feature coming soon...</p></div>} />
-              <Route path="/reports" element={<div className="p-4 border rounded-lg bg-card mt-4"><h2 className="text-xl font-bold">Global Reports</h2><p className="text-muted-foreground mt-2">Feature coming soon...</p></div>} />
-              <Route path="/team" element={<div className="p-4 border rounded-lg bg-card mt-4"><h2 className="text-xl font-bold">Team Members</h2><p className="text-muted-foreground mt-2">Feature coming soon...</p></div>} />
-              <Route path="/performance" element={<div className="p-4 border rounded-lg bg-card mt-4"><h2 className="text-xl font-bold">Team Performance</h2><p className="text-muted-foreground mt-2">Feature coming soon...</p></div>} />
-              <Route path="/settings" element={<div className="p-4 border rounded-lg bg-card mt-4"><h2 className="text-xl font-bold">Settings Page</h2><p className="text-muted-foreground mt-2">Coming soon...</p></div>} />
+              <Route path="/team" element={<TeamList />} />
+              <Route path="/performance" element={<TeamPerformance />} />
+              <Route path="/eod" element={<EveningReports />} />
+              <Route path="/ai-copilot" element={<AICopilot />} />
+              <Route path="/reports" element={<GlobalReports />} />
+              
+              <Route path="/managers" element={<ManagersList />} />
+              <Route path="/settings" element={<ProfileSettings />} />
             </Route>
             
             {/* Fallback */}
@@ -51,6 +63,7 @@ const App = () => {
           </Routes>
         </main>
       </div>
+      {!isAuthRoute && <FloatingAICopilot />}
     </div>
   )
 }
