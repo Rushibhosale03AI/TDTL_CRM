@@ -1056,3 +1056,9 @@ WARNING 2026-06-04 14:31:53,299 log Unauthorized: /api/eod/analytics/
 WARNING 2026-06-04 14:31:53,313 log Unauthorized: /api/auth/me/
 WARNING 2026-06-04 14:31:53,316 log Unauthorized: /api/eod/analytics/
 WARNING 2026-06-04 14:31:53,319 log Unauthorized: /api/eod/team-reports/
+WARNING 2026-06-05 10:45:20,894 log Unauthorized: /api/auth/login/
+WARNING 2026-06-05 11:27:15,315 log Unauthorized: /api/auth/login/
+WARNING 2026-06-05 11:27:15,318 log Unauthorized: /api/auth/login/
+WARNING 2026-06-05 11:27:15,385 log Unauthorized: /api/auth/login/
+WARNING 2026-06-05 11:27:15,465 log Unauthorized: /api/auth/login/
+WARNING 2026-06-05 11:31:52,247 log Unauthorized: /api/auth/login/
